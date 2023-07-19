@@ -1,0 +1,95 @@
+@import url('bootstrap.min.css');
+
+
+
+
+
+
+
+
+/* Style for header */
+header .top-header {
+    border-bottom: 1px solid #efefef;
+}
+
+header .top-header .container .row .col-sm-5 .nav .nav-item{
+    border-left: 1px solid #efefef;
+}
+
+header .top-header .container .row .col-sm-5 .nav .nav-item .nav-link{
+    font-family: 'PT Sans', sans-serif;
+    color: #858585;
+    font-size: 0.625rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 14px 10px 14px 10px;
+}
+
+header .middle-part .container .row .col-sm-8 .nav .nav-item .nav-link{
+    padding: 10px 7px 7px 7px;
+    color: #858585;
+    text-transform: uppercase;
+    font-size: 0.625rem;
+}
+
+header .middle-part .container .row .col-sm-8 .nav .nav-item .nav-link .input-group{
+    margin-top: -2px;
+}
+
+header .middle-part .container .row .col-sm-8 .nav .nav-item .nav-link .input-group input{
+    background-color: #f0f0f0;
+}
+
+header .middle-part .container .row .col-sm-8 .nav .nav-item .nav-link .input-group input::placeholder{
+    color: #999;
+    font-size: 0.825rem;
+}
+
+header .middle-part .container .row .col-sm-8 .nav .nav-item .nav-link .input-group .form-control{
+    border-radius: 0;
+}
+
+header .middle-part .container .row .col-sm-8 .nav .nav-item .nav-link .input-group .input-group-text{
+    background-color: #f0f0f0;
+    border-radius: 0;
+    color: #c3c4c4;
+}
+
+/* CART BUTTON */
+header .middle-part .container .row .col-sm-8 .nav .nav-item .nav-link .btn {
+    font-family: 'PT Sans', sans-serif;
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 600;
+    line-height: 20px;
+    text-align: center;
+    margin-right: 0;
+    padding: 5px 30px 6px 30px;
+    text-transform: uppercase;
+    border-radius: 0;
+    margin-top: -2px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width: 320px){
+    html{
+        font-size: 0.8rem;
+    }
+}
