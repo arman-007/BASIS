@@ -126,9 +126,11 @@ header .navbar .container .collapse .navbar-nav .nav-item:hover .nav-link{
 }
 
 .best-sellers .container .best-sellers-products div{
-    margin-right: 1rem;
-    margin-left: 1rem;
-}
+    /* margin-right: 0.5rem; */
+    /* margin-left: 0.5rem; */
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+} 
 
 
 
