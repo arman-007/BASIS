@@ -1,4 +1,6 @@
 @import url('bootstrap.min.css');
+@import url('slick.css');
+@import url('slick-theme.css');
 
 
 
@@ -71,16 +73,62 @@ header .middle-part .container .row .col-sm-8 .nav .nav-item .nav-link .btn {
     margin-top: -2px;
 }
 
+header .navbar{
+    padding-top: 0;
+    padding-bottom: 0;
+}
 
+header .bg-body-tertiary{
+    background-color: #4a4a4a !important;
 
+}
 
+header .navbar .container .collapse .navbar-nav .nav-item{
+    padding-left:0.5rem;
+    padding-right:0.5rem;
+}
 
+header .navbar .container .collapse .navbar-nav .nav-item .nav-link{
+    color: #EFEFEF;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding-left: 0;
+    padding-right: 0;
+    border-bottom: 1px solid transparent;
+}
 
+header .navbar .container .collapse .navbar-nav .nav-item .active{
+    color: #bea285;
+}
 
+header .navbar .container .collapse .navbar-nav .nav-item{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
 
+header .navbar .container .collapse .navbar-nav .nav-item:hover{
+    background-color: #e6e6e6;
+}
 
+header .navbar .container .collapse .navbar-nav .nav-item:hover .nav-link{
+    color: #6c6c6c;
+    border-bottom: 1px solid #6c6c6c;
+}
 
+/* style for Best Sellers */
+.best-sellers .container .slick-prev::before{
+    color: #999;
+}
 
+.best-sellers .container .slick-next::before{
+    color: #999;
+}
+
+.best-sellers .container .best-sellers-products div{
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
 
 
 
