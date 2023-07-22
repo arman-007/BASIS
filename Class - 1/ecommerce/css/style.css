@@ -9,6 +9,28 @@
 
 
 
+section {
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+
+section .container h2{
+    border-bottom: 1px #e5e5e5 solid;
+    margin: auto;
+    font-weight: 600;
+    font-size: 1.25rem;
+    letter-spacing: 1.4px;
+    padding: 12px 0px;
+    color: #000;
+    text-transform: uppercase;
+}
+
+section .container h2 span{
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 1.4px;
+}
+
 /* Style for header */
 header .top-header {
     border-bottom: 1px solid #efefef;
@@ -128,13 +150,71 @@ header .navbar .container .collapse .navbar-nav .nav-item:hover .nav-link{
 .best-sellers .container .best-sellers-products div{
     /* margin-right: 0.5rem; */
     /* margin-left: 0.5rem; */
-    padding-left: 0.5rem;
+    padding-left: 0.5rem; 
     padding-right: 0.5rem;
 } 
 
+.best-sellers .container .best-sellers-products div .product-info{
+    margin-top: 1rem;
+}
 
+.best-sellers .container .best-sellers-products div:hover .product-info .item-title a{
+    color: #ef4749;
+}
 
+.best-sellers .container .best-sellers-products div .product-info .item-title a{
+    color: #000;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    font-family: 'PT Sans', sans-serif;
+}
 
+.best-sellers .container .best-sellers-products div .product-info .item-title a{
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.best-sellers .container .best-sellers-products div .product-info .ratings{
+    margin-top: 5px;
+    font-size: 0.75rem;
+    color: #ccc;
+}
+
+.best-sellers .container .best-sellers-products div .product-info .regular-price .price{
+    padding-top: 5px;
+    font-weight: bold;
+    font-size: 0.875rem;
+    color: #000;
+}
+
+.best-sellers .container .best-sellers-products div .product-info .btn-light{
+    background: transparent;
+    color: #666;
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: normal;
+    padding: 8px 12px;
+    text-transform: uppercase;
+    border: 1px #d1d1d1 solid;
+    font-family: 'PT Sans', sans-serif;
+    border-radius: 0;
+}
+
+.best-sellers .container .best-sellers-products div:hover .product-info .btn-light{
+    background: #ef4749;
+    color: #fff;
+    border: 1px #ef4749 solid;
+    transition: color 300ms ease-in-out 0s,
+    background-color 300ms ease-in-out 0s,
+    background-position 300ms ease-in-out 0s,;
+}
 
 
 
