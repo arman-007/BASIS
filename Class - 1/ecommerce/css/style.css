@@ -15,7 +15,7 @@ section {
 }
 
 section .container h2{
-    /* border-bottom: 1px #e5e5e5 solid; */
+    border-bottom: 1px #e5e5e5 solid;
     margin: auto;
     font-weight: 600;
     font-size: 1.25rem;
@@ -349,27 +349,141 @@ header .navbar .container .collapse .navbar-nav .nav-item:hover .nav-link{
     padding: 9px 25px;
 }
 
-/* styling for new products */
+/* styling for NEW PRODUCTS */
 .new-products .container .row{
-    border-bottom: 1px #e5e5e5 solid;
+    /* border-bottom: 1px #e5e5e5 solid; */
+    position: relative;
 }
 
-.new-products .container .row .col-sm-4 .nav{
-    /* font-family: 'PT Sans', sans-serif; */
-    /* background-color: #ef4749; */
-    color: #fff;
-    border-radius: 1px;
+.new-products .container .row::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%; /* Adjust this to position the border correctly */
+    width: 98%; /* Adjust the width as needed */
+    height: 1px; /* Adjust the height as needed */
+    background-color: #e5e5e5;
+    transform: translateX(-50%);
+  }
+
+.new-products .container .row h2{
+    border-bottom: none;
 }
 
-.new-products .container .row .col-sm-4 .nav li{
+.new-products .container .row .col-sm-5 .nav{
     font-family: 'PT Sans', sans-serif;
-    /* background-color: #ef4749; */
-    color: #fff;
-    border-radius: 1px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    padding-left: 50px;
+    justify-content: end;
+    
+}
+
+.new-products .container .row .col-sm-5 .nav .nav-item{
+    display: inline-block;
+    float: none;
+    border-right: 1px #f2f2f2 solid;
+    padding: 0;
+}
+
+.new-products .container .row .col-sm-5 .nav .nav-item:last-child{
+    border: none;
+}
+
+.new-products .container .row .col-sm-5 .nav .nav-item:hover{
+    color: white;
+    background-color: #f28083;
+    border-radius: 3px;
+    transition: color 300ms ease-in-out 0s,
+    background-color 300ms ease-in-out 0s,
+    background-position 300ms ease-in-out 0s;
 }
 
 
+.new-products .container .row .col-sm-5 .nav .nav-item .nav-link{
+    color: #666;
+    font-size: 0.6875rem;
+    letter-spacing: 1px;
+    padding: 3px 12px;
+    margin-top: 0;
+    text-transform: uppercase;
+    border-radius: 3px;
+    text-decoration: none;
+}
 
+.new-products .container .row .col-sm-5 .nav .nav-item:hover .nav-link{
+    color: white;
+    padding: 3px 12px;
+}
+
+/* style for Best Sellers */
+
+.new-products .container .tab-content .tab-pane div{
+    border-bottom: none;
+} 
+
+.new-products .container .tab-content .tab-pane div .product-info{
+    margin-top: 1rem;
+}
+
+.new-products .container .tab-content .tab-pane div:hover .product-info .item-title a{
+    color: #ef4749;
+}
+
+.new-products .container .tab-content .tab-pane div .product-info .item-title a{
+    color: #000;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.new-products .container .tab-content .tab-pane div .product-info .item-title a{
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.new-products .container .tab-content .tab-pane div .product-info .ratings{
+    margin-top: 5px;
+    font-size: 0.75rem;
+    color: #ccc;
+}
+
+.new-products .container .tab-content .tab-pane div .product-info .regular-price .price{
+    padding-top: 5px;
+    font-weight: bold;
+    font-size: 0.875rem;
+    color: #000;
+}
+
+.new-products .container .tab-content .tab-pane div .product-info .btn-light{
+    background: transparent;
+    color: #666;
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: normal;
+    padding: 8px 12px;
+    text-transform: uppercase;
+    border: 1px #d1d1d1 solid;
+    font-family: 'PT Sans', sans-serif;
+    border-radius: 0;
+}
+
+.new-products .container .tab-content .tab-pane div:hover .product-info .btn-light{
+    background: #ef4749;
+    color: #fff;
+    border: 1px #ef4749 solid;
+    transition: color 300ms ease-in-out 0s,
+    background-color 300ms ease-in-out 0s,
+    background-position 300ms ease-in-out 0s;
+} 
 
 
 @media(max-width: 320px){
