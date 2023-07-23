@@ -15,7 +15,7 @@ section {
 }
 
 section .container h2{
-    border-bottom: 1px #e5e5e5 solid;
+    /* border-bottom: 1px #e5e5e5 solid; */
     margin: auto;
     font-weight: 600;
     font-size: 1.25rem;
@@ -215,6 +215,160 @@ header .navbar .container .collapse .navbar-nav .nav-item:hover .nav-link{
     background-color 300ms ease-in-out 0s,
     background-position 300ms ease-in-out 0s,;
 }
+
+/* style for special products */
+.special-products .container .h2{
+    border-bottom: none;
+
+}
+
+
+/* style for deal of the day countdown */
+.special-products .container .row .col-sm-7 .countdown{
+    background-image: url("../image/deals-bg.png");
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.special-products .container .row .col-sm-7 .countdown h2{
+    color: #ef4749;
+    font-size: 2.5rem;
+    margin: 0px auto;
+    font-weight: 400;
+    padding: 0px;
+    text-align: center;
+    margin-bottom: 10px;
+    letter-spacing: 0px;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.special-products .container .row .col-sm-7 .countdown .separator{
+    display: inline-block;
+    position: relative;
+    font-size: 20px;
+    color: #C2A476;
+    text-align: center;
+    height: 1px;
+    width: 90px;
+    background: #333;
+    margin-top: 15px;
+}
+
+.special-products .container .row .col-sm-7 .countdown p{
+    color: #666;
+    padding: 0;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+    font-family: 'PT Sans', sans-serif;
+    padding: 0px 80px;
+    padding-top: 25px;
+}
+
+.special-products .container .row .col-sm-7 .countdown span{
+    font-weight: 600;
+}
+
+.timer-grid {
+    overflow: hidden;
+    display: inline-block;
+}
+
+.timer-grid .box-time-date {
+    background: #fff;
+    font-size: 10px;
+    color: #999;
+    min-width: 100px;
+    min-height: 100px;
+    text-align: center;
+    margin-top: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: 20px;
+    font-family: 'PT Sans', sans-serif;
+    font-weight: normal;
+}
+
+.timer-grid .day.box-time-date {
+    background: #000;
+    border-color: #000 !important
+}
+
+.timer-grid .day.box-time-date span {
+    color: #fff
+}
+
+.timer-grid .day.box-time-date {
+    color: #fff
+}
+
+.timer-grid .box-time-date span {
+    display: block;
+    font-size: 24px;
+    color: #000;
+    margin-top: 6px;
+}
+
+.timer-grid .box-timer {
+    text-align: center;
+    margin-top: 0;
+    position: relative;
+    left: 0px;
+    top: 0
+}
+
+.timer-grid .box-time-date span {
+    display: block;
+    font-size: 20px;
+    color: #f28083;
+    margin-top: 6px;
+}
+
+.special-products .container .row .col-sm-7 .countdown .btn{
+    padding: 10px 25px;
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-top: 35px;
+    background: #ef4749;
+    border: 1px #ef4749 solid;
+    margin-bottom: 0px;
+    font-family: 'PT Sans', sans-serif;
+    border-radius: 0;
+    font-weight: 300;
+}
+
+.special-products .container .row .col-sm-7 .countdown .btn i{
+    font-size: 1rem;
+    padding: 9px 25px;
+}
+
+/* styling for new products */
+.new-products .container .row{
+    border-bottom: 1px #e5e5e5 solid;
+}
+
+.new-products .container .row .col-sm-4 .nav{
+    /* font-family: 'PT Sans', sans-serif; */
+    /* background-color: #ef4749; */
+    color: #fff;
+    border-radius: 1px;
+}
+
+.new-products .container .row .col-sm-4 .nav li{
+    font-family: 'PT Sans', sans-serif;
+    /* background-color: #ef4749; */
+    color: #fff;
+    border-radius: 1px;
+}
+
+
 
 
 
