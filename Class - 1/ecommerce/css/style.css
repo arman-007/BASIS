@@ -490,6 +490,73 @@ header .navbar .container .collapse .navbar-nav .nav-item:hover .nav-link{
 } 
 
 
+/* style for BRAND CAROUSEL */
+.carousel{
+    background-color: #f5f6f7;
+    margin-top: 2.5rem;
+    border-top: 1px solid #e7e7e7;
+    padding: 25px 0;
+}
+
+
+
+
+/* style for PRODUCT page */
+/* style for PRODUCT page */
+/* style for PRODUCT page */
+/* style for PRODUCT page */
+
+/* style for BreadCrumb */
+.page-breadcrumb .container .breadcrumb .breadcrumb-item{
+    color: #000;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+}
+
+.page-breadcrumb .container .breadcrumb .breadcrumb-item a{
+    color: #666;
+    text-decoration: none;
+}
+
+/* style for Categories */
+.page-content .container .row .col-sm-3 h2{
+        border-bottom: 2px solid #333;
+        color: #000;
+        font-size: 1rem;
+        font-weight: 400;
+        letter-spacing: 1px;
+        line-height: normal;
+        margin: 0;
+        padding: 0px 0px 10px 0px;
+        text-transform: uppercase;
+        font-family: 'PT Sans', sans-serif;
+}
+
+.page-content .container .row .col-sm-3 .accordion-button::after{
+    background-image: none;
+    content: "+";
+}
+
+.page-content .container .row .col-sm-3 .accordion-button:before {
+    content: '\f105';
+    font-family: FontAwesome;
+    font-size: 14px;
+    padding-right: 8px;
+    color: #999;
+    font-weight: normal;
+}
+
+
+
+
+
+
+
+
+
+
+
 @media(max-width: 320px){
     html{
         font-size: 0.8rem;

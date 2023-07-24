@@ -112,10 +112,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">HOME</a>
+                            <a class="nav-link active" href="index.html">HOME</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">LIVING ROOM</a>
+                            <a class="nav-link" href="products.html">PRODUCTS</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">DINING & BAR</a>
@@ -1013,14 +1013,26 @@
 
     <!-- Markup for Brand Carousel -->
     <div id="brandCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="image/b-logo1-130x50.png" class="d-block w-10" alt="Carousel Image">
-                <img src="image/b-logo2-130x50.png" class="d-block w-10" alt="Carousel Image">
-                <img src="image/b-logo3-130x50.png" class="d-block w-10" alt="Carousel Image">
-                <img src="image/b-logo4-130x50.png" class="d-block w-10" alt="Carousel Image">
-                <img src="image/b-logo5-130x50.png" class="d-block w-10" alt="Carousel Image">
-                <img src="image/b-logo6-130x50.png" class="d-block w-10" alt="Carousel Image">
+        <div class="container">
+            <div class="brand-logo">
+                <div>
+                    <img src="image/b-logo1-130x50.png" class="d-block w-50" alt="Carousel Image">
+                </div>
+                <div>
+                    <img src="image/b-logo2-130x50.png" class="d-block w-50" alt="Carousel Image">
+                </div>
+                <div>
+                    <img src="image/b-logo3-130x50.png" class="d-block w-50" alt="Carousel Image">
+                </div>
+                <div>
+                    <img src="image/b-logo4-130x50.png" class="d-block w-50" alt="Carousel Image">
+                </div>
+                <div>
+                    <img src="image/b-logo5-130x50.png" class="d-block w-50" alt="Carousel Image">
+                </div>
+                <div>
+                    <img src="image/b-logo6-130x50.png" class="d-block w-50" alt="Carousel Image">
+                </div>
             </div>
         </div>
     </div>
@@ -1039,12 +1051,12 @@
         // const brandCarousel = new bootstrap.Carousel(brandCarouselElement, {
         //     interval: 1800
         // })
-        $('.carousel-item').slick({
-            slidesToShow: 6,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 2000,
-        });
+        // $('.carousel-item').slick({
+        //     slidesToShow: 6,
+        //     slidesToScroll: 1,
+        //     autoplay: true,
+        //     autoplaySpeed: 2000,
+        // });
     </script>
     <script>
         const myCarouselElement = document.querySelector('#myCarousel')
@@ -1116,6 +1128,42 @@
             $('.sec .number').text(
                 event.strftime('%S ')
             );
+        });
+
+        $('.brand-logo').slick({
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            arrows: false,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 4,
+                        slidesToScroll: 1,
+                        infinite: true,
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+                // You can unslick at a given breakpoint now by adding:
+                // settings: "unslick"
+                // instead of a settings object
+            ]
         });
     </script>
 </body>
