@@ -349,6 +349,7 @@ header .navbar .container .collapse .navbar-nav .nav-item:hover .nav-link{
     padding: 9px 25px;
 }
 
+
 /* styling for NEW PRODUCTS */
 .new-products .container .row{
     /* border-bottom: 1px #e5e5e5 solid; */
@@ -387,12 +388,17 @@ header .navbar .container .collapse .navbar-nav .nav-item:hover .nav-link{
     padding: 0;
 }
 
+.new-products .container .row .col-sm-5 .nav .nav-item .active{
+    background-color: #ef4749;
+    color: #fff !important;
+}
+
 .new-products .container .row .col-sm-5 .nav .nav-item:last-child{
     border: none;
 }
 
 .new-products .container .row .col-sm-5 .nav .nav-item:hover{
-    color: white;
+    color: #fff;
     background-color: #f28083;
     border-radius: 3px;
     transition: color 300ms ease-in-out 0s,
@@ -417,10 +423,8 @@ header .navbar .container .collapse .navbar-nav .nav-item:hover .nav-link{
     padding: 3px 12px;
 }
 
-/* style for Best Sellers */
-
-.new-products .container .tab-content .tab-pane div{
-    border-bottom: none;
+.new-products .container .tab-content{
+    border-bottom: none !important;
 } 
 
 .new-products .container .tab-content .tab-pane div .product-info{

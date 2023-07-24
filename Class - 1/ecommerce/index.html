@@ -619,7 +619,8 @@
                 </div>
             </div>
             <div class="tab-content" id="pills-tabContent">
-                <div class="tab-pane fade show active" id="pills-chairs" role="tabpanel" aria-labelledby="pills-chairs-tab" tabindex="0">
+                <div class="tab-pane fade show active" id="pills-chairs" role="tabpanel"
+                    aria-labelledby="pills-chairs-tab" tabindex="0">
                     <div class="row">
                         <div class="col">
                             <div>
@@ -715,7 +716,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="pills-racks" role="tabpanel" aria-labelledby="pills-racks-tab" tabindex="0">
+                <div class="tab-pane fade" id="pills-racks" role="tabpanel" aria-labelledby="pills-racks-tab"
+                    tabindex="0">
                     <div class="row">
                         <div class="col">
                             <div>
@@ -811,7 +813,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="pills-tables" role="tabpanel" aria-labelledby="pills-tables-tab" tabindex="0">
+                <div class="tab-pane fade" id="pills-tables" role="tabpanel" aria-labelledby="pills-tables-tab"
+                    tabindex="0">
                     <div class="row">
                         <div class="col">
                             <div>
@@ -907,7 +910,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="pills-sofas" role="tabpanel" aria-labelledby="pills-sofas-tab" tabindex="0">
+                <div class="tab-pane fade" id="pills-sofas" role="tabpanel" aria-labelledby="pills-sofas-tab"
+                    tabindex="0">
                     <div class="row">
                         <div class="col">
                             <div>
@@ -1007,6 +1011,20 @@
         </div>
     </section>
 
+    <!-- Markup for Brand Carousel -->
+    <div id="brandCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="image/b-logo1-130x50.png" class="d-block w-10" alt="Carousel Image">
+                <img src="image/b-logo2-130x50.png" class="d-block w-10" alt="Carousel Image">
+                <img src="image/b-logo3-130x50.png" class="d-block w-10" alt="Carousel Image">
+                <img src="image/b-logo4-130x50.png" class="d-block w-10" alt="Carousel Image">
+                <img src="image/b-logo5-130x50.png" class="d-block w-10" alt="Carousel Image">
+                <img src="image/b-logo6-130x50.png" class="d-block w-10" alt="Carousel Image">
+            </div>
+        </div>
+    </div>
+
 
 
     <script src="js/bootstrap.bundle.min.js"></script>
@@ -1015,6 +1033,19 @@
     <script type="text/javascript" src="js/slick.min.js"></script>
     <script type="text/javascript" src="js/jquery.countdown.min.js"></script>
 
+    <script>
+        // const brandCarouselElement = document.querySelector('#brandCarousel')
+
+        // const brandCarousel = new bootstrap.Carousel(brandCarouselElement, {
+        //     interval: 1800
+        // })
+        $('.carousel-item').slick({
+            slidesToShow: 6,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+        });
+    </script>
     <script>
         const myCarouselElement = document.querySelector('#myCarousel')
 
