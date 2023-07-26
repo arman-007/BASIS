@@ -1,0 +1,12 @@
+.container{
+    width: 768px;
+}
+p{
+    font-size: 1.5rem;
+}
+.btn{
+    font-size: 1.25rem;
+    padding: 1rem 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
