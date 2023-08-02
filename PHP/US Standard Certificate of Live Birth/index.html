@@ -17,79 +17,79 @@
             <div class="col-sm-5">
                 <h4>Mother's Details</h4>
                 <p>Mother's Current Legal Name</p>
-                <form action="" method="post">
+                <form action="processor.php" method="post">
                     <div class="row d-flex">
                         <div class="col-sm-6">
                             <label for="motherCurrentFirstName" class="form-label">First Name</label>
-                            <input type="text" class="form-control" id="motherCurrentFirstName">
+                            <input type="text" name="motherCurrentFirstName" class="form-control" id="motherCurrentFirstName">
                         </div>
                         <div class="col-sm-6">
                             <label for="motherCurrentMiddleName" class="form-label">Middle Name</label>
-                            <input type="text" class="form-control" id="motherCurrentMiddleName">
+                            <input type="text" name="motherCurrentMiddleName" class="form-control" id="motherCurrentMiddleName">
                         </div>
                     </div>
                     <div class="row d-flex">
                         <div class="col-sm-6">
                             <label for="motherCurrentLastName" class="form-label">Last Name</label>
-                            <input type="text" class="form-control" id="motherCurrentLastName">
+                            <input type="text" name="motherCurrentLastName" class="form-control" id="motherCurrentLastName">
                         </div>
                         <div class="col-sm-6">
                             <label for="motherCurrentSuffix" class="form-label">Suffix</label>
-                            <input type="text" class="form-control" id="motherCurrentSuffix">
+                            <input type="text" name="motherCurrentSuffix" class="form-control" id="motherCurrentSuffix">
                         </div>
                     </div>
                     <label for="motherDOB" class="form-label">Date of Birth (Mo/Da/Yr)</label>
-                    <input type="text" class="form-control" id="motherDOB">
+                    <input type="datetime" name="motherDOB" class="form-control" id="motherDOB">
 
                     <!-- Mother's Prior to Marriage info markup -->
                     <p>Mother's Name Prior to First Marriage</p>
                     <div class="row d-flex">
                         <div class="col-sm-6">
                             <label for="motherPreviousFirstName" class="form-label">First Name</label>
-                            <input type="text" class="form-control" id="motherPreviousFirstName">
+                            <input type="text" name="motherPreviousFirstName" class="form-control" id="motherPreviousFirstName">
                         </div>
                         <div class="col-sm-6">
                             <label for="motherPreviousMiddleName" class="form-label">Middle Name</label>
-                            <input type="text" class="form-control" id="motherPreviousMiddleName">
+                            <input type="text" name="motherPreviousMiddleName" class="form-control" id="motherPreviousMiddleName">
                         </div>
                     </div>
                     <div class="row d-flex">
                         <div class="col-sm-6">
                             <label for="motherPreviousLastName" class="form-label">Last Name</label>
-                            <input type="text" class="form-control" id="motherPreviousLastName">
+                            <input type="text" name="motherPreviousLastName" class="form-control" id="motherPreviousLastName">
                         </div>
                         <div class="col-sm-6">
                             <label for="motherPreviousSuffix" class="form-label">Suffix</label>
-                            <input type="text" class="form-control" id="motherPreviousSuffix">
+                            <input type="text" name="motherPreviousSuffix" class="form-control" id="motherPreviousSuffix">
                         </div>
                     </div>
                     <label for="motherBirthPlace" class="form-label">Birthplace (State, Territory or Foreign Country)</label>
-                    <input type="text" class="form-control" id="motherBirthPlace">
+                    <input type="text" name="motherBirthPlace" class="form-control" id="motherBirthPlace">
                     
                     <label for="motherStateResidence" class="form-label">Residence of Mother-State</label>
-                    <input type="text" class="form-control" id="motherStateResidence">
+                    <input type="text" name="motherStateResidence" class="form-control" id="motherStateResidence">
 
                     <label for="motherCounty" class="form-label">County</label>
-                    <input type="text" class="form-control" id="motherCounty">
+                    <input type="text" name="motherCounty" class="form-control" id="motherCounty">
 
                     <label for="motherCity" class="form-label">City, Town or Location</label>
-                    <input type="text" class="form-control" id="motherCity">
+                    <input type="text" name="motherCity" class="form-control" id="motherCity">
 
                     <label for="motherStreetNumber" class="form-label">Street and Number</label>
-                    <input type="text" class="form-control" id="motherStreetNumber">
+                    <input type="text" name="motherStreetNumber" class="form-control" id="motherStreetNumber">
 
                     <label for="motherApartment" class="form-label">Apartment no.</label>
-                    <input type="text" class="form-control" id="motherApartment">
+                    <input type="text" name="motherApartment" class="form-control" id="motherApartment">
                 
                     <div class="row d-flex">
                         <div class="col-sm-6">
                             <label for="motherZipCode" class="form-label">Zip Code</label>
-                            <input type="text" class="form-control" id="motherZipCode">
+                            <input type="text" name="motherZipCode" class="form-control" id="motherZipCode">
                         </div>
                         <div class="col-sm-6">
                             <p>Inside City Limits?</p>
                             <div class="d-flex">
-                                <div class="form-check input-group">
+                                <div class="form-check">
                                     <input class="form-check-input" type="radio" name="MotherCityLimitsToggle" value="1" id="toggle-yes">
                                     <label class="form-check-label" for="toggle-yes">
                                         Yes
@@ -104,10 +104,7 @@
                             </div>
                         </div>
                     </div>
-
-
-
-
+                    <button type="submit" class="btn btn-secondary">Submit</button>
                 </form>
             </div>
         </div>
