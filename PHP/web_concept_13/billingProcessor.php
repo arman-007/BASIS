@@ -14,6 +14,13 @@
         echo "<br>Languages you know: ".implode(", ", $_POST['languages']);
     }
 
+    if($_POST['division'] != ''){
+        echo "<br>Your State: ".$_POST['division'];
+    }
+    else{
+        echo "<br>You haven't entered any division";
+    }
+
 
 ?>
 </pre>
