@@ -3,8 +3,8 @@
     // print_r($_POST);
 
     // echo $_POST['title'];
-    $_title = $_POST['title'];
-    $_description = $_POST['description'];
+    $_name = $_POST['name'];
+    $_link = $_POST['link'];
 
     // connection to DB
     $servername = "localhost";
@@ -15,16 +15,15 @@
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $query = "INSERT INTO `products` (`title`, `description`) VALUES (:title, :description)";
+    $query = "INSERT INTO `categories` (`name`, `link`) VALUES (:name, :link)";
 
     $stmt = $conn->prepare($query);
 
-    $stmt -> bindParam(':title', $_title);
-    $stmt -> bindParam(':description', $_description);
-
+    $stmt -> bindParam(':name', $_name);
+    $stmt -> bindParam(':link', $_link);
     $result = $stmt -> execute();
 
     var_dump($result);
 
-?>
+    ?>
 </pre>

@@ -4,7 +4,6 @@
 
     // echo $_POST['title'];
     $_title = $_POST['title'];
-    $_description = $_POST['description'];
 
     // connection to DB
     $servername = "localhost";
@@ -15,12 +14,11 @@
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $query = "INSERT INTO `products` (`title`, `description`) VALUES (:title, :description)";
+    $query = "INSERT INTO `products` (`title`) VALUES (:title)";
 
     $stmt = $conn->prepare($query);
 
     $stmt -> bindParam(':title', $_title);
-    $stmt -> bindParam(':description', $_description);
 
     $result = $stmt -> execute();
 

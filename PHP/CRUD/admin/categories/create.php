@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>CRUD (Create)</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   </head>
   <body>
@@ -16,18 +16,18 @@
         <div class="container">
             <div class="row d-flex justify-content-center">
                 <div class="col-sm-6">
-                    <h1 class="text-center fs-3 fw-bolder mt-3 mb-4">Add New Product</h1>
+                    <h1 class="text-center fs-3 fw-bolder mt-3 mb-4">Add New Category</h1>
                     <form action="store.php" method="post" enctype="multipart/form-data">
                         <div class="mb-3 row">
                             <label for="inputTitle" class="col-sm-3 col-form-label">Title:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="inputTitle" name="title" value="" required>
+                                <input type="text" class="form-control" id="inputTitle" name="name" value="" required>
                             </div>
                         </div>
                         <div class="mb-3 row">
-                            <label for="inputDescription" class="col-sm-3 col-form-label">Description:</label>
+                            <label for="inputLink" class="col-sm-3 col-form-label">Link:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="inputDescription" name="description" value="" required>
+                                <input type="text" class="form-control" id="inputLink" name="link" value="">
                             </div>
                         </div>
                         <button type="submit" class="btn btn-secondary">Submit</button>
@@ -39,4 +39,3 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
   </body>
 </html>
-<!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid magnam voluptatem reiciendis beatae minus corporis voluptate sint iste cumq -->
