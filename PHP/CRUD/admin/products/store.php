@@ -26,5 +26,7 @@
 
     var_dump($result);
 
+    header("location: index.php");
+
 ?>
 </pre>

@@ -9,12 +9,12 @@ $conn = new PDO("mysql:host=$servername;dbname=ARMAN", $username, $password);
 // set the PDO error mode to exception
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$query = "SELECT * FROM `products`";
+$query = "SELECT * FROM `banners`";
 
 $stmt = $conn->prepare($query);
 
 $result = $stmt->execute();
-$products = $stmt->fetchAll();
+$banners = $stmt->fetchAll();
 
 // var_dump($products);
 ?>
@@ -35,7 +35,7 @@ $products = $stmt->fetchAll();
         <div class="container">
             <div class="row d-flex justify-content-center">
                 <div class="col-sm-6">
-                    <h1 class="text-center fs-3 fw-bolder mt-3 mb-4">Product List</h1>
+                    <h1 class="text-center fs-3 fw-bolder mt-3 mb-4">Banner List</h1>
                     <ul class="nav d-flex justify-content-center mb-4 fw-bold">
                         <li class="nav-item"><a href="create.php" class="nav-link text-success">Add New</a></li>
                         <li class="nav-item"><a href="#" class="nav-link text-success">Link</a></li>
@@ -48,11 +48,11 @@ $products = $stmt->fetchAll();
                             </tr>
                         </thead>
                         <?php
-                        foreach($products as $product):
+                        foreach($banners as $banner):
                         ?>
                         <tbody>
                             <tr>
-                                <th scope="row"><?= $product['title']; ?></th>
+                                <th scope="row"><?= $banner['title']; ?></th>
                                 <td>Show | Edit | Delete</td>
                             </tr>
                         </tbody>

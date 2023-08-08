@@ -16,12 +16,36 @@
         <div class="container">
             <div class="row d-flex justify-content-center">
                 <div class="col-sm-6">
-                    <h1 class="text-center fs-3 fw-bolder mt-3 mb-4">Add New</h1>
+                    <h1 class="text-center fs-3 fw-bolder mt-3 mb-4">Add New Banner</h1>
                     <form action="store.php" method="post" enctype="multipart/form-data">
                         <div class="mb-3 row">
-                            <label for="inputTitle" class="col-sm-3 col-form-label">Title:</label>
+                            <label for="inputTitle" class="col-sm-3 col-form-label">Banner Title:</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" id="inputTitle" name="title" value="" required>
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="inputTitle" class="col-sm-3 col-form-label">Picture:</label>
+                            <div class="col-sm-9">
+                                <input type="file" class="form-control" id="inputTitle" name="bannerPicture" value="" >
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="inputLink" class="col-sm-3 col-form-label">Link:</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="inputLink" name="link" value="">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="promotionalMessage" class="col-sm-3 col-form-label">Promotional Message:</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="promotionalMessage" name="promotionalMessage" value="">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="bannerHTML" class="col-sm-3 col-form-label">Banner HTML:</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="bannerHTML" name="bannerHTML" value="">
                             </div>
                         </div>
                         <button type="submit" class="btn btn-secondary">Submit</button>
