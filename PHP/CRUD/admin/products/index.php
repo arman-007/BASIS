@@ -53,7 +53,7 @@ $products = $stmt->fetchAll();
                         <tbody>
                             <tr>
                                 <th scope="row"><?= $product['title']; ?></th>
-                                <td>Show | Edit | Delete</td>
+                                <td><a href="show.php?id=<?= $product['id']; ?>">Show</a> | Edit | Delete</td>
                             </tr>
                         </tbody>
                         <?php

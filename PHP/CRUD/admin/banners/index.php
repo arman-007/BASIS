@@ -53,7 +53,7 @@ $banners = $stmt->fetchAll();
                         <tbody>
                             <tr>
                                 <th scope="row"><?= $banner['title']; ?></th>
-                                <td>Show | Edit | Delete</td>
+                                <td><a href="show.php?id=<?= $banner['id']; ?>">Show</a> | Edit | Delete</td>
                             </tr>
                         </tbody>
                         <?php

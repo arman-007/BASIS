@@ -1,7 +1,7 @@
 <pre>
     <?php
-    print_r($_FILES);
-    die();
+    // print_r($_FILES);
+    // die();
 
     // echo $_POST['title'];
     $_title = $_POST['title'];
