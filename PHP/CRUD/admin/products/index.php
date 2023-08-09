@@ -38,7 +38,6 @@ $products = $stmt->fetchAll();
                     <h1 class="text-center fs-3 fw-bolder mt-3 mb-4">Product List</h1>
                     <ul class="nav d-flex justify-content-center mb-4 fw-bold">
                         <li class="nav-item"><a href="create.php" class="nav-link text-success">Add New</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link text-success">Link</a></li>
                     </ul>
                     <table class="table table-bordered">
                         <thead>
@@ -53,7 +52,7 @@ $products = $stmt->fetchAll();
                         <tbody>
                             <tr>
                                 <th scope="row"><?= $product['title']; ?></th>
-                                <td><a href="show.php?id=<?= $product['id']; ?>">Show</a> | Edit | Delete</td>
+                                <td><a href="show.php?id=<?= $product['id']; ?>">Show</a> | <a href="edit.php?id=<?= $product['id']; ?>">edit</a> | <a href="delete.php?id=<?= $product['id']; ?>">Delete</a></td>
                             </tr>
                         </tbody>
                         <?php
