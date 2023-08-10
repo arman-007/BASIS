@@ -1,8 +1,9 @@
 <pre>
     <?php
+    $webroot = "http://localhost/ARMAN/BASIS/PHP/CRUD/";
     $_id = $_GET['id'];
     
-    var_dump($_GET);
+    // var_dump($_GET);
     
     // connection to DB
     $servername = "localhost";
@@ -54,6 +55,11 @@
 
                         <dt class="col-sm-3">Description :</dt>
                         <dd class="col-sm-9"><?= $product['description'] ?></dd>
+                        
+                        <dt class="col-sm-3">Picture :</dt>
+                        <dd class="col-sm-9">
+                            <img class="img-fluid" src="<?=$webroot?>uploads/<?= $product['picture'];?>" alt="product image">
+                        </dd>
                     </dl>
                 </div>
             </div>

@@ -5,7 +5,7 @@
 
     // echo $_POST['title'];
     $_title = $_POST['title'];
-    $_bannerPicture = $_POST['bannerPicture'];
+    $_bannerPicture = $_FILES['picture']['name'];
     $_link = $_POST['link'];
     $_promotionalMessage = $_POST['promotionalMessage'];
     $_bannerHTML = $_POST['bannerHTML'];

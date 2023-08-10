@@ -27,7 +27,7 @@
                         <div class="mb-3 row">
                             <label for="inputTitle" class="col-sm-3 col-form-label">Picture:</label>
                             <div class="col-sm-9">
-                                <input type="file" class="form-control" id="inputTitle" name="bannerPicture" value="" >
+                                <input type="file" class="form-control" id="inputTitle" name="picture" value="" >
                             </div>
                         </div>
                         <div class="mb-3 row">
