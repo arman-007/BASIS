@@ -53,7 +53,9 @@ $banners = $stmt->fetchAll();
                         <tbody>
                             <tr>
                                 <th scope="row"><?= $banner['title']; ?></th>
-                                <td><a href="show.php?id=<?= $banner['id']; ?>">Show</a> | Edit | <a href="delete.php?id=<?= $banner['id']; ?>">Delete</a></td>
+                                <td><a href="show.php?id=<?= $banner['id']; ?>">Show</a> 
+                                | <a href="edit.php?id=<?= $banner['id']; ?>">Edit</a> | 
+                                <a href="delete.php?id=<?= $banner['id']; ?>" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
                             </tr>
                         </tbody>
                         <?php

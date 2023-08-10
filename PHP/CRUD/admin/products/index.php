@@ -46,18 +46,29 @@ $products = $stmt->fetchAll();
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
-                        <?php
-                        foreach($products as $product):
-                        ?>
                         <tbody>
+                            <?php
+                            if(count($products) > 0):
+                                foreach($products as $product):
+                            ?>
                             <tr>
                                 <th scope="row"><?= $product['title']; ?></th>
-                                <td><a href="show.php?id=<?= $product['id']; ?>">Show</a> | <a href="edit.php?id=<?= $product['id']; ?>">edit</a> | <a href="delete.php?id=<?= $product['id']; ?>">Delete</a></td>
+                                <td><a href="show.php?id=<?= $product['id']; ?>">Show</a> | <a href="edit.php?id=<?= $product['id']; ?>">edit</a> | <a href="delete.php?id=<?= $product['id']; ?>" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
                             </tr>
+                            <?php
+                                endforeach;
+                            else:
+                            ?>
+                            <tr>
+                                <td colspan="2" class="text-center" >
+                                    No product is available. 
+                                    <a href="create.php" class="text-success">Click here to add a product</a>
+                                </td>
+                            </tr>
+                            <?php
+                            endif;
+                            ?>
                         </tbody>
-                        <?php
-                        endforeach
-                        ?>
                     </table>
                 </div>
             </div>
