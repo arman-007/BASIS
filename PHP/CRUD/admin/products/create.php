@@ -30,6 +30,12 @@
                                 <input type="text" class="form-control" id="inputDescription" name="description" value="" required>
                             </div>
                         </div>
+                        <div class="mb-3 row">
+                            <label for="inputPicture" class="col-sm-3 col-form-label">Picture:</label>
+                            <div class="col-sm-9">
+                                <input type="file" class="form-control" id="inputPicture" name="picture" value="" required>
+                            </div>
+                        </div>
                         <button type="submit" class="btn btn-secondary">Submit</button>
                     </form>
                 </div>

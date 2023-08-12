@@ -38,7 +38,6 @@ $products = $stmt->fetchAll();
                     <h1 class="text-center fs-3 fw-bolder mt-3 mb-4">Product List</h1>
                     <ul class="nav d-flex justify-content-center mb-4 fw-bold">
                         <li class="nav-item"><a href="create.php" class="nav-link text-success">Add New</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link text-success">Link</a></li>
                     </ul>
                     <table class="table table-bordered">
                         <thead>
@@ -47,18 +46,29 @@ $products = $stmt->fetchAll();
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
-                        <?php
-                        foreach($products as $product):
-                        ?>
                         <tbody>
+                            <?php
+                            if(count($products) > 0):
+                                foreach($products as $product):
+                            ?>
                             <tr>
                                 <th scope="row"><?= $product['title']; ?></th>
-                                <td>Show | Edit | Delete</td>
+                                <td><a href="show.php?id=<?= $product['id']; ?>">Show</a> | <a href="edit.php?id=<?= $product['id']; ?>">edit</a> | <a href="delete.php?id=<?= $product['id']; ?>" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
                             </tr>
+                            <?php
+                                endforeach;
+                            else:
+                            ?>
+                            <tr>
+                                <td colspan="2" class="text-center" >
+                                    No product is available. 
+                                    <a href="create.php" class="text-success">Click here to add a product</a>
+                                </td>
+                            </tr>
+                            <?php
+                            endif;
+                            ?>
                         </tbody>
-                        <?php
-                        endforeach
-                        ?>
                     </table>
                 </div>
             </div>
