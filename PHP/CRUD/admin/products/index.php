@@ -35,7 +35,7 @@ $products = $stmt->fetchAll();
         <div class="container">
             <div class="row d-flex justify-content-center">
                 <div class="col-sm-6">
-                    <h1 class="text-center fs-3 fw-bolder mt-3 mb-4">Product List</h1>
+                    <h1 class="text-center fs-3 fw-bolder mt-3 mb-4">Products List</h1>
                     <ul class="nav d-flex justify-content-center mb-4 fw-bold">
                         <li class="nav-item"><a href="create.php" class="nav-link text-success">Add New</a></li>
                     </ul>

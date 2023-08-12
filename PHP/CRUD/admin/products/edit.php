@@ -1,5 +1,8 @@
 <pre>
     <?php
+
+    $webroot = "http://localhost/ARMAN/BASIS/PHP/CRUD/";
+
     $_id = $_GET['id'];
     
     // var_dump($_GET);
@@ -48,19 +51,27 @@
                         <div class="mb-3 row">
                             <label for="inputId" class="col-sm-3 col-form-label"></label>
                             <div class="col-sm-9">
-                                <input type="hidden" class="form-control" id="inputId" name="id" value="<?= $product['id']; ?>" required>
+                                <input type="hidden" class="form-control" id="inputId" name="id" value="<?= $product['id']; ?>">
                             </div>
                         </div>
                         <div class="mb-3 row">
                             <label for="inputTitle" class="col-sm-3 col-form-label">Title:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="inputTitle" name="title" value="<?= $product['title']; ?>" required>
+                                <input type="text" class="form-control" id="inputTitle" name="title" value="<?= $product['title']; ?>">
                             </div>
                         </div>
                         <div class="mb-3 row">
                             <label for="inputDescription" class="col-sm-3 col-form-label">Description:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="inputDescription" name="description" value="<?= $product['description']; ?>" required>
+                                <input type="text" class="form-control" id="inputDescription" name="description" value="<?= $product['description']; ?>">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="inputPicture" class="col-sm-3 col-form-label">Picture:</label>
+                            <div class="col-sm-9">
+                                <input type="file" class="form-control" id="inputPicture" name="picture" value="<?= $product['picture']; ?>">
+                                <img class="img-fluid" src="<?=$webroot?>uploads/<?= $product['picture'];?>" alt="product image">
+                                <input type="hidden" name="old_picture" value="<?= $product['picture'];?>">
                             </div>
                         </div>
                         <button type="submit" class="btn btn-secondary">Submit</button>

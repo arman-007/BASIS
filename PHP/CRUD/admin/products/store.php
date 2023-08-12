@@ -3,14 +3,16 @@
     // print_r($_POST);
     $approot = $_SERVER['DOCUMENT_ROOT']."/ARMAN/BASIS/PHP/CRUD/uploads/";
     //working with image
+    $file_name = "IMG_".time()."_".$_FILES['picture']['name'];
+
     $target = $_FILES['picture']['tmp_name'];
         
-    $destination = $approot.$_FILES['picture']['name'];
+    $destination = $approot.$file_name;
     
     $is_file_moved = move_uploaded_file($target, $destination);
 
     if($is_file_moved){
-        $_picture = $_FILES['picture']['name'];
+        $_picture =  $file_name;
     }
     else{
         $_picture = null;
@@ -19,7 +21,7 @@
     // echo $_POST['title'];
     $_title = $_POST['title'];
     $_description = $_POST['description'];
-    $_picture = $_FILES['picture']['name'];
+    // $_picture = $_FILES['picture']['name'];
 
     // connection to DB
     $servername = "localhost";
