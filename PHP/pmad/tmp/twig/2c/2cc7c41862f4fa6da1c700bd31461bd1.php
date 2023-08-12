@@ -94,6 +94,6 @@ echo _gettext("Clear fast filter");
 
     public function getSourceContext()
     {
-        return new Source("", "navigation/tree/fast_filter.twig", "C:\\laragon\\www\\pmad\\templates\\navigation\\tree\\fast_filter.twig");
+        return new Source("", "navigation/tree/fast_filter.twig", "C:\\laragon\\www\\BASIS\\PHP\\pmad\\templates\\navigation\\tree\\fast_filter.twig");
     }
 }

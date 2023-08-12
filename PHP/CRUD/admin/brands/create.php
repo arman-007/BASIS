@@ -16,7 +16,7 @@
         <div class="container">
             <div class="row d-flex justify-content-center">
                 <div class="col-sm-6">
-                    <h1 class="text-center fs-3 fw-bolder mt-3 mb-4">Add New Brand</h1>
+                    <h1 class="text-center fs-3 fw-bolder mt-3 mb-4">Add A New Brand</h1>
                     <form action="store.php" method="post" enctype="multipart/form-data">
                         <div class="mb-3 row">
                             <label for="inputTitle" class="col-sm-3 col-form-label">Title:</label>

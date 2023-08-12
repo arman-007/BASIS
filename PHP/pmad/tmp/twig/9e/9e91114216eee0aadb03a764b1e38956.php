@@ -512,6 +512,6 @@ echo _gettext("Preview SQL");
 
     public function getSourceContext()
     {
-        return new Source("", "table/index_form.twig", "C:\\laragon\\www\\pmad\\templates\\table\\index_form.twig");
+        return new Source("", "table/index_form.twig", "C:\\laragon\\www\\BASIS\\PHP\\pmad\\templates\\table\\index_form.twig");
     }
 }

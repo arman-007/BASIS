@@ -497,6 +497,6 @@ echo _gettext("Storage engine");
 
     public function getSourceContext()
     {
-        return new Source("", "columns_definitions/partitions.twig", "C:\\laragon\\www\\pmad\\templates\\columns_definitions\\partitions.twig");
+        return new Source("", "columns_definitions/partitions.twig", "C:\\laragon\\www\\BASIS\\PHP\\pmad\\templates\\columns_definitions\\partitions.twig");
     }
 }

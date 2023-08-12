@@ -68,6 +68,6 @@ class __TwigTemplate_bd0d2a5159b6e17f35fed9eb7abbf3ad extends Template
 
     public function getSourceContext()
     {
-        return new Source("", "display/results/null_display.twig", "C:\\laragon\\www\\ARMAN\\BASIS\\PHP\\pmad\\templates\\display\\results\\null_display.twig");
+        return new Source("", "display/results/null_display.twig", "C:\\laragon\\www\\BASIS\\PHP\\pmad\\templates\\display\\results\\null_display.twig");
     }
 }

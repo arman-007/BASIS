@@ -734,6 +734,6 @@ echo _gettext("Get more themes!");
 
     public function getSourceContext()
     {
-        return new Source("", "home/index.twig", "C:\\laragon\\www\\pmad\\templates\\home\\index.twig");
+        return new Source("", "home/index.twig", "C:\\laragon\\www\\BASIS\\PHP\\pmad\\templates\\home\\index.twig");
     }
 }

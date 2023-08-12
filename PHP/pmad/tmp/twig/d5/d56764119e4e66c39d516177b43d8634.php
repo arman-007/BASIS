@@ -132,6 +132,6 @@ class __TwigTemplate_26925ab2c8fbcc9a3a60fba5902265eb extends Template
 
     public function getSourceContext()
     {
-        return new Source("", "table/page_with_secondary_tabs.twig", "C:\\laragon\\www\\pmad\\templates\\table\\page_with_secondary_tabs.twig");
+        return new Source("", "table/page_with_secondary_tabs.twig", "C:\\laragon\\www\\BASIS\\PHP\\pmad\\templates\\table\\page_with_secondary_tabs.twig");
     }
 }

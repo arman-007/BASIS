@@ -79,6 +79,6 @@ echo _gettext("With selected:");
 
     public function getSourceContext()
     {
-        return new Source("", "select_all.twig", "C:\\laragon\\www\\pmad\\templates\\select_all.twig");
+        return new Source("", "select_all.twig", "C:\\laragon\\www\\BASIS\\PHP\\pmad\\templates\\select_all.twig");
     }
 }

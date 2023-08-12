@@ -413,6 +413,6 @@ echo _gettext("Close");
 
     public function getSourceContext()
     {
-        return new Source("", "columns_definitions/column_definitions_form.twig", "C:\\laragon\\www\\pmad\\templates\\columns_definitions\\column_definitions_form.twig");
+        return new Source("", "columns_definitions/column_definitions_form.twig", "C:\\laragon\\www\\BASIS\\PHP\\pmad\\templates\\columns_definitions\\column_definitions_form.twig");
     }
 }

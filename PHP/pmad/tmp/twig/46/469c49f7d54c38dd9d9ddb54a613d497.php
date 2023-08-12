@@ -72,6 +72,6 @@ echo _gettext("There are no favorite tables.");
 
     public function getSourceContext()
     {
-        return new Source("", "recent_favorite_table_no_tables.twig", "C:\\laragon\\www\\pmad\\templates\\recent_favorite_table_no_tables.twig");
+        return new Source("", "recent_favorite_table_no_tables.twig", "C:\\laragon\\www\\BASIS\\PHP\\pmad\\templates\\recent_favorite_table_no_tables.twig");
     }
 }

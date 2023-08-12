@@ -88,6 +88,6 @@ class __TwigTemplate_f72587a17f04398ff9ed725018a57570 extends Template
 
     public function getSourceContext()
     {
-        return new Source("", "console/toolbar.twig", "C:\\laragon\\www\\pmad\\templates\\console\\toolbar.twig");
+        return new Source("", "console/toolbar.twig", "C:\\laragon\\www\\BASIS\\PHP\\pmad\\templates\\console\\toolbar.twig");
     }
 }

@@ -815,6 +815,6 @@ echo _gettext("Drop");
 
     public function getSourceContext()
     {
-        return new Source("", "server/databases/index.twig", "C:\\laragon\\www\\pmad\\templates\\server\\databases\\index.twig");
+        return new Source("", "server/databases/index.twig", "C:\\laragon\\www\\BASIS\\PHP\\pmad\\templates\\server\\databases\\index.twig");
     }
 }
