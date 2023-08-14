@@ -15,7 +15,7 @@
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $query = "SELECT * FROM `products` WHERE id= (:id)";
+    $query = "SELECT * FROM `users` WHERE id= (:id)";
 
     $stmt = $conn->prepare($query);
 
@@ -23,7 +23,7 @@
 
     $result = $stmt->execute();
 
-    $product = $stmt->fetch();
+    $user = $stmt->fetch();
     ?>
 </pre>
 
@@ -33,7 +33,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Product Details</title>
+    <title>User Details</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
 
@@ -42,24 +42,25 @@
         <div class="container">
             <div class="row d-flex justify-content-center">
                 <div class="col-sm-6">
-                    <h1 class="text-center fs-3 fw-bolder mt-3 mb-4">Product Details</h1>
+                    <h1 class="text-center fs-3 fw-bolder mt-3 mb-4">User Details</h1>
                     <ul class="nav d-flex justify-content-center mb-4 fw-bold">
-                        <li class="nav-item"><a href="index.php" class="nav-link text-success">Products List</a></li>
+                        <li class="nav-item"><a href="index.php" class="nav-link text-success">User List</a></li>
                     </ul>
                     <dl class="row">
                         <dt class="col-sm-3">ID :</dt>
-                        <dd class="col-sm-9"><?= $product['id'] ?></dd>
+                        <dd class="col-sm-9"><?= $user['id'] ?></dd>
 
-                        <dt class="col-sm-3">Title :</dt>
-                        <dd class="col-sm-9"><?= $product['title'] ?></dd>
+                        <dt class="col-sm-3">Name :</dt>
+                        <dd class="col-sm-9"><?= $user['name'] ?></dd>
 
-                        <dt class="col-sm-3">Description :</dt>
-                        <dd class="col-sm-9"><?= $product['description'] ?></dd>
-
-                        <dt class="col-sm-3">Picture :</dt>
-                        <dd class="col-sm-9">
-                            <img class="img-fluid" src="<?= $webroot ?>uploads/<?= $product['picture']; ?>" alt="product image">
-                        </dd>
+                        <dt class="col-sm-3">User Name :</dt>
+                        <dd class="col-sm-9"><?= $user['user_name'] ?></dd>
+                        
+                        <dt class="col-sm-3">E-mail :</dt>
+                        <dd class="col-sm-9"><?= $user['email'] ?></dd>
+                        
+                        <dt class="col-sm-3">Phone :</dt>
+                        <dd class="col-sm-9"><?= $user['phone'] ?></dd>
                     </dl>
                 </div>
             </div>
