@@ -27,6 +27,12 @@
     $_link = $_POST['link'];
     $_promotionalMessage = $_POST['promotionalMessage'];
     $_bannerHTML = $_POST['bannerHTML'];
+    if(array_key_exists('is_active', $_POST)){
+        $_is_active = $_POST['is_active'];
+    }
+    else{
+        $_is_active = 0;
+    }
 
     // connection to DB
     $servername = "localhost";
@@ -38,7 +44,7 @@
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $query = "INSERT INTO `banners` (`title`, `picture`, `link`,`promotional_message`,`html_banner`) VALUES (:title, :picture, :link, :promotionalMessage, :bannerHTML)";
+    $query = "INSERT INTO `banners` (`title`, `picture`, `link`,`promotional_message`,`html_banner`, `is_active`) VALUES (:title, :picture, :link, :promotionalMessage, :bannerHTML,:is_active)";
 
     $stmt = $conn->prepare($query);
 
@@ -47,10 +53,11 @@
     $stmt -> bindParam(':link', $_link);
     $stmt -> bindParam(':promotionalMessage', $_promotionalMessage);
     $stmt -> bindParam(':bannerHTML', $_bannerHTML);
+    $stmt -> bindParam(':is_active', $_is_active);
 
     $result = $stmt -> execute();
 
-    var_dump($result);
+    // var_dump($result);
 
     header("location:index.php");
 

@@ -67,6 +67,12 @@
                             </div>
                         </div>
                         <div class="mb-3 row">
+                            <label for="is_active" class="col-sm-3 col-form-label">Is Active:</label>
+                            <div class="col-sm-9">
+                                <input class="form-check-input" checked type="checkbox" value="1" id="is_active" name="is_active">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
                             <label for="inputPicture" class="col-sm-3 col-form-label">Picture:</label>
                             <div class="col-sm-9">
                                 <input type="file" class="form-control" id="inputPicture" name="picture" value="<?= $product['picture']; ?>">

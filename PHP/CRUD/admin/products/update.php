@@ -26,6 +26,7 @@
     $_id = $_POST['id'];
     $_title = $_POST['title'];
     $_description = $_POST['description'];
+    $_is_active = $_POST['is_active'];
 
     // connection to DB
     $servername = "localhost";
@@ -36,18 +37,19 @@
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $query = "UPDATE `products` SET `title` = :title, `description` = :description, `picture` = :picture WHERE `products`.`id` = :id";
+    $query = "UPDATE `products` SET `title` = :title, `description` = :description, `is_active` = :is_active, `picture` = :picture WHERE `products`.`id` = :id";
 
     $stmt = $conn->prepare($query);
 
     $stmt -> bindParam(':id', $_id);
     $stmt -> bindParam(':title', $_title);
     $stmt -> bindParam(':description', $_description);
+    $stmt -> bindParam(':is_active', $_is_active);
     $stmt -> bindParam(':picture', $_picture);
 
     $result = $stmt -> execute();
 
-    var_dump($result);
+    // var_dump($result);
 
     header("location: index.php");
     ?>

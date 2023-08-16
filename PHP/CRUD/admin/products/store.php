@@ -21,6 +21,12 @@
     // echo $_POST['title'];
     $_title = $_POST['title'];
     $_description = $_POST['description'];
+    if(array_key_exists('is_active', $_POST)){
+        $_is_active = $_POST['is_active'];
+    }
+    else{
+        $_is_active = 0;
+    }
     // $_picture = $_FILES['picture']['name'];
 
     // connection to DB
@@ -32,17 +38,18 @@
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $query = "INSERT INTO `products` (`title`, `description`, `picture`) VALUES (:title, :description, :picture)";
+    $query = "INSERT INTO `products` (`title`, `description`, `is_active`, `picture`) VALUES (:title, :description, :is_active, :picture)";
 
     $stmt = $conn->prepare($query);
 
     $stmt -> bindParam(':title', $_title);
     $stmt -> bindParam(':description', $_description);
+    $stmt -> bindParam(':is_active', $_is_active);
     $stmt -> bindParam(':picture', $_picture);
 
     $result = $stmt -> execute();
 
-    var_dump($result);
+    // var_dump($result);
 
     header("location: index.php");
 
