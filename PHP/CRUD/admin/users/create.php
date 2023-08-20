@@ -19,21 +19,9 @@
                     <h1 class="text-center fs-3 fw-bolder mt-3 mb-4">User Registration</h1>
                     <form action="store.php" method="post" enctype="multipart/form-data">
                         <div class="mb-3 row">
-                            <label for="inputName" class="col-sm-3 col-form-label">Name:</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" id="inputName" name="name" value="" required>
-                            </div>
-                        </div>
-                        <div class="mb-3 row">
                             <label for="inputUserName" class="col-sm-3 col-form-label">User Name:</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" id="inputUserName" name="user_name" value="" required>
-                            </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="inputEmail" class="col-sm-3 col-form-label">Email:</label>
-                            <div class="col-sm-9">
-                                <input type="email" class="form-control" id="inputEmail" name="email" value="" required>
                             </div>
                         </div>
                         <div class="mb-3 row">
@@ -43,9 +31,21 @@
                             </div>
                         </div>
                         <div class="mb-3 row">
+                            <label for="inputName" class="col-sm-3 col-form-label">Name:</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="inputName" name="full_name" value="" required>
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="inputEmail" class="col-sm-3 col-form-label">Email:</label>
+                            <div class="col-sm-9">
+                                <input type="email" class="form-control" id="inputEmail" name="email" value="" required>
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
                             <label for="inputMobile" class="col-sm-3 col-form-label">Mobile:</label>
                             <div class="col-sm-9">
-                                <input type="tel" class="form-control" id="inputMobile" name="phone" value="" required>
+                                <input type="tel" class="form-control" id="inputMobile" name="phone_number" value="" required>
                             </div>
                         </div>
                         <button type="submit" class="btn btn-secondary">Submit</button>

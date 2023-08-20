@@ -51,7 +51,7 @@
                         <dd class="col-sm-9"><?= $user['id'] ?></dd>
 
                         <dt class="col-sm-3">Name :</dt>
-                        <dd class="col-sm-9"><?= $user['name'] ?></dd>
+                        <dd class="col-sm-9"><?= $user['full_name'] ?></dd>
 
                         <dt class="col-sm-3">User Name :</dt>
                         <dd class="col-sm-9"><?= $user['user_name'] ?></dd>
@@ -60,7 +60,7 @@
                         <dd class="col-sm-9"><?= $user['email'] ?></dd>
                         
                         <dt class="col-sm-3">Phone :</dt>
-                        <dd class="col-sm-9"><?= $user['phone'] ?></dd>
+                        <dd class="col-sm-9"><?= $user['phone_number'] ?></dd>
                     </dl>
                 </div>
             </div>

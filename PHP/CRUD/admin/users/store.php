@@ -19,11 +19,11 @@
     // }
 
     // echo $_POST['title'];
-    $_name = $_POST['name'];
+    $_full_name = $_POST['full_name'];
     $_userName = $_POST['user_name'];
     $_email = $_POST['email'];
     $_password = $_POST['password'];
-    $_phone = $_POST['phone'];
+    $_phone_number = $_POST['phone_number'];
     // $_picture = $_FILES['picture']['name'];
 
     // connection to DB
@@ -35,15 +35,15 @@
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $query = "INSERT INTO `users` (`name`, `user_name`, `email`, `password`, `phone`) VALUES (:name, :userName, :email, :password, :phone)";
+    $query = "INSERT INTO `users` (`full_name`, `user_name`, `email`, `password`, `phone_number`) VALUES (:full_name, :userName, :email, :password, :phone_number)";
 
     $stmt = $conn->prepare($query);
 
-    $stmt -> bindParam(':name', $_name);
+    $stmt -> bindParam(':full_name', $_full_name);
     $stmt -> bindParam(':userName', $_userName);
     $stmt -> bindParam(':email', $_email);
     $stmt -> bindParam(':password', $_password);
-    $stmt -> bindParam(':phone', $_phone);
+    $stmt -> bindParam(':phone_number', $_phone_number);
 
     $result = $stmt -> execute();
 

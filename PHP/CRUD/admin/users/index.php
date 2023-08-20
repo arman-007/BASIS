@@ -56,10 +56,10 @@ $users = $stmt->fetchAll();
                                 foreach($users as $user):
                             ?>
                             <tr>
-                                <th scope="row"><?= $user['name']; ?></th>
+                                <th scope="row"><?= $user['full_name']; ?></th>
                                 <th scope="row"><?= $user['user_name']; ?></th>
                                 <th scope="row"><?= $user['email']; ?></th>
-                                <th scope="row"><?= $user['phone']; ?></th>
+                                <th scope="row"><?= $user['phone_number']; ?></th>
                                 <td><a href="show.php?id=<?= $user['id']; ?>">Show</a> | <a href="edit.php?id=<?= $user['id']; ?>">edit</a> | <a href="delete.php?id=<?= $user['id']; ?>" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
                             </tr>
                             <?php

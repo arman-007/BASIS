@@ -1,5 +1,11 @@
 <pre>
 <?php
+
+// echo $_SERVER['DOCUMENT_ROOT'];
+// die();
+
+include_once($_SERVER['DOCUMENT_ROOT']."/ARMAN/BASIS/PHP/CRUD/authenticator.php");
+
 // connection to DB
 $servername = "localhost";
 $username = "root";

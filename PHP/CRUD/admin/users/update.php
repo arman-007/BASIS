@@ -24,11 +24,11 @@
     //     $_picture = $_POST['old_picture'];
     // }
     $_id = $_POST['id'];
-    $_name = $_POST['name'];
+    $_full_name = $_POST['full_name'];
     $_userName = $_POST['user_name'];
     $_email = $_POST['email'];
     $_password = $_POST['password'];
-    $_phone = $_POST['phone'];
+    $_phone_number = $_POST['phone_number'];
     // $_picture = $_FILES['picture']['name'];
 
     // connection to DB
@@ -40,16 +40,16 @@
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $query = "UPDATE `users` SET `name` = :name, `user_name` = :userName, `email` = :email, `password` = :password, `phone` = :phone WHERE `users`.`id` = :id";
+    $query = "UPDATE `users` SET `full_name` = :full_name, `user_name` = :userName, `email` = :email, `password` = :password, `phone_number` = :phone_number WHERE `users`.`id` = :id";
 
     $stmt = $conn->prepare($query);
 
     $stmt -> bindParam(':id', $_id);
-    $stmt -> bindParam(':name', $_name);
+    $stmt -> bindParam(':full_name', $_full_name);
     $stmt -> bindParam(':userName', $_userName);
     $stmt -> bindParam(':email', $_email);
     $stmt -> bindParam(':password', $_password);
-    $stmt -> bindParam(':phone', $_phone);
+    $stmt -> bindParam(':phone_number', $_phone_number);
 
     $result = $stmt -> execute();
 

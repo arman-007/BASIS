@@ -57,7 +57,7 @@
                         <div class="mb-3 row">
                             <label for="inputName" class="col-sm-3 col-form-label">Name:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="inputName" name="name" value="<?= $user['name']; ?>">
+                                <input type="text" class="form-control" id="inputName" name="full_name" value="<?= $user['full_name']; ?>">
                             </div>
                         </div>
                         <div class="mb-3 row">
@@ -81,7 +81,7 @@
                         <div class="mb-3 row">
                             <label for="inputPhone" class="col-sm-3 col-form-label">Phone:</label>
                             <div class="col-sm-9">
-                                <input type="tel" class="form-control" id="inputPhone" name="phone" value="<?= $user['phone']; ?>">
+                                <input type="tel" class="form-control" id="inputPhone" name="phone_number" value="<?= $user['phone_number']; ?>">
                             </div>
                         </div>
                         
