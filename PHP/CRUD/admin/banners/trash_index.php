@@ -9,7 +9,7 @@ $conn = new PDO("mysql:host=$servername;dbname=ARMAN", $username, $password);
 // set the PDO error mode to exception
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$query = "SELECT * FROM `banners` WHERE `banners`.`soft_delete` = 0";
+$query = "SELECT * FROM `banners` WHERE `banners`.`soft_delete` = 1";
 
 $stmt = $conn->prepare($query);
 
@@ -37,14 +37,12 @@ $banners = $stmt->fetchAll();
                 <div class="col-sm-6">
                     <h1 class="text-center fs-3 fw-bolder mt-3 mb-4">Banner List</h1>
                     <ul class="nav d-flex justify-content-center mb-4 fw-bold">
-                        <li class="nav-item"><a href="create.php" class="nav-link text-success">Add New</a></li>
-                        <li class="nav-item"><a href="trash_index.php" class="nav-link text-success">Trashed Items</a></li>
+                        <li class="nav-item"><a href="index.php" class="nav-link text-success">List</a></li>
                     </ul>
                     <table class="table table-bordered">
                         <thead class="text-center">
                             <tr>
                                 <th scope="col">Title</th>
-                                <th scope="col">Status</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
@@ -54,8 +52,7 @@ $banners = $stmt->fetchAll();
                         <tbody>
                             <tr>
                                 <td scope="row"><?= $banner['title']; ?></td>
-                                <td class="text-center" scope="row"><?= $banner['is_active'] ? 'Active' : 'Inactive'; ?></td>
-                                <td class="text-center"><a href="show.php?id=<?= $banner['id']; ?>">Show</a> | <a href="edit.php?id=<?= $banner['id']; ?>">Edit</a> | <a href="trash.php?id=<?= $banner['id']; ?>">Trash</a> | <a href="delete.php?id=<?= $banner['id']; ?>" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
+                                <td class="text-center"><a href="show.php?id=<?= $banner['id']; ?>">Show</a> | <a href="restore.php?id=<?= $banner['id']; ?>">Restore</a> | <a href="delete.php?id=<?= $banner['id']; ?>" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
                             </tr>
                         </tbody>
                         <?php

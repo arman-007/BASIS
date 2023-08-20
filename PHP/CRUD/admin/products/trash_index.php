@@ -9,12 +9,12 @@ $conn = new PDO("mysql:host=$servername;dbname=ARMAN", $username, $password);
 // set the PDO error mode to exception
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$query = "SELECT * FROM `banners` WHERE `banners`.`soft_delete` = 0";
+$query = "SELECT * FROM `products` WHERE `products`.`is_deleted` = 1";
 
 $stmt = $conn->prepare($query);
 
 $result = $stmt->execute();
-$banners = $stmt->fetchAll();
+$products = $stmt->fetchAll();
 
 // var_dump($products);
 ?>
@@ -35,32 +35,40 @@ $banners = $stmt->fetchAll();
         <div class="container">
             <div class="row d-flex justify-content-center">
                 <div class="col-sm-6">
-                    <h1 class="text-center fs-3 fw-bolder mt-3 mb-4">Banner List</h1>
+                    <h1 class="text-center fs-3 fw-bolder mt-3 mb-4">Products List</h1>
                     <ul class="nav d-flex justify-content-center mb-4 fw-bold">
-                        <li class="nav-item"><a href="create.php" class="nav-link text-success">Add New</a></li>
-                        <li class="nav-item"><a href="trash_index.php" class="nav-link text-success">Trashed Items</a></li>
+                        <li class="nav-item"><a href="index.php" class="nav-link text-success">List</a></li>
                     </ul>
                     <table class="table table-bordered">
-                        <thead class="text-center">
+                        <thead>
                             <tr>
                                 <th scope="col">Title</th>
-                                <th scope="col">Status</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
-                        <?php
-                        foreach($banners as $banner):
-                        ?>
                         <tbody>
+                            <?php
+                            if(count($products) > 0):
+                                foreach($products as $product):
+                            ?>
                             <tr>
-                                <td scope="row"><?= $banner['title']; ?></td>
-                                <td class="text-center" scope="row"><?= $banner['is_active'] ? 'Active' : 'Inactive'; ?></td>
-                                <td class="text-center"><a href="show.php?id=<?= $banner['id']; ?>">Show</a> | <a href="edit.php?id=<?= $banner['id']; ?>">Edit</a> | <a href="trash.php?id=<?= $banner['id']; ?>">Trash</a> | <a href="delete.php?id=<?= $banner['id']; ?>" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
+                                <td scope="row"><?= $product['title']; ?></td>
+                                <td><a href="restore.php?id=<?= $product['id']; ?>">Restore</a> | <a href="delete.php?id=<?= $product['id']; ?>" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
                             </tr>
+                            <?php
+                                endforeach;
+                            else:
+                            ?>
+                            <tr>
+                                <td colspan="2" class="text-center" >
+                                    No product is available. 
+                                    <a href="create.php" class="text-success">Click here to add a product</a>
+                                </td>
+                            </tr>
+                            <?php
+                            endif;
+                            ?>
                         </tbody>
-                        <?php
-                        endforeach
-                        ?>
                     </table>
                 </div>
             </div>

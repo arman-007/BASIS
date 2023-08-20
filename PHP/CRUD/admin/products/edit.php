@@ -69,7 +69,18 @@
                         <div class="mb-3 row">
                             <label for="is_active" class="col-sm-3 col-form-label">Is Active:</label>
                             <div class="col-sm-9">
-                                <input class="form-check-input" checked type="checkbox" value="1" id="is_active" name="is_active">
+                                <?php
+                                if ($product['is_active']==0){
+                                ?>
+                                    <input class="form-check-input" type="checkbox" value="1" id="is_active" name="is_active">
+                                <?php
+                                }
+                                else{
+                                ?>
+                                <input class="form-check-input" type="checkbox" value="1" id="is_active" name="is_active" checked>
+                                <?php
+                                }
+                                ?>
                             </div>
                         </div>
                         <div class="mb-3 row">

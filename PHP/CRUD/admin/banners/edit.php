@@ -63,6 +63,23 @@
                                 <input type="text" class="form-control" id="inputPromotionalMessage" name="promotionalMessage" value="<?= $banner['promotional_message']; ?>" required>
                             </div>
                         </div>
+                        <div class="mb-3 row">
+                            <label for="is_active" class="col-sm-3 col-form-label">Is Active:</label>
+                            <div class="col-sm-9">
+                                <?php
+                                if ($banner['is_active']==0){
+                                ?>
+                                    <input class="form-check-input" type="checkbox" value="1" id="is_active" name="is_active">
+                                <?php
+                                }
+                                else{
+                                ?>
+                                <input class="form-check-input" type="checkbox" value="1" id="is_active" name="is_active" checked>
+                                <?php
+                                }
+                                ?>
+                            </div>
+                        </div>
                         <button type="submit" class="btn btn-secondary">Submit</button>
                     </form>
                 </div>

@@ -9,7 +9,7 @@ $conn = new PDO("mysql:host=$servername;dbname=ARMAN", $username, $password);
 // set the PDO error mode to exception
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$query = "SELECT * FROM `products`";
+$query = "SELECT * FROM `products` WHERE `products`.`is_deleted` = 0";
 
 $stmt = $conn->prepare($query);
 
@@ -38,11 +38,13 @@ $products = $stmt->fetchAll();
                     <h1 class="text-center fs-3 fw-bolder mt-3 mb-4">Products List</h1>
                     <ul class="nav d-flex justify-content-center mb-4 fw-bold">
                         <li class="nav-item"><a href="create.php" class="nav-link text-success">Add New</a></li>
+                        <li class="nav-item"><a href="trash_index.php" class="nav-link text-success">Trashed items</a></li>
                     </ul>
                     <table class="table table-bordered">
-                        <thead>
+                        <thead class="text-center">
                             <tr>
                                 <th scope="col">Title</th>
+                                <th scope="col">Status</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
@@ -52,8 +54,9 @@ $products = $stmt->fetchAll();
                                 foreach($products as $product):
                             ?>
                             <tr>
-                                <th scope="row"><?= $product['title']; ?></th>
-                                <td><a href="show.php?id=<?= $product['id']; ?>">Show</a> | <a href="edit.php?id=<?= $product['id']; ?>">edit</a> | <a href="delete.php?id=<?= $product['id']; ?>" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
+                                <td scope="row"><?= $product['title']; ?></td>
+                                <td class="text-center" scope="row"><?= $product['is_active'] ? 'Active' : 'Inactive'; ?></td>
+                                <td class="text-center" ><a href="show.php?id=<?= $product['id']; ?>">Show</a> | <a href="edit.php?id=<?= $product['id']; ?>">edit</a> | <a href="trash.php?id=<?= $product['id']; ?>">Trash</a></td>
                             </tr>
                             <?php
                                 endforeach;

@@ -57,6 +57,9 @@
 
                         <dt class="col-sm-3">Promotional Message :</dt>
                         <dd class="col-sm-9"><?= $banner['promotional_message'] ?></dd>
+
+                        <dt class="col-sm-3">Is active :</dt>
+                        <dd class="col-sm-9"><?= $banner['is_active'] ? 'Active' : 'Inactive'; ?></dd>
                     </dl>
                 </div>
             </div>

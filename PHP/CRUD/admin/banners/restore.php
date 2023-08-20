@@ -2,6 +2,8 @@
     <?php
     $_id = $_GET['id'];
 
+    $_soft_delete = 0;
+
     // connection to DB
     $servername = "localhost";
     $username = "root";
@@ -12,11 +14,12 @@
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-    $query = "DELETE FROM products WHERE `products`.`id` = :id";
+    $query = "UPDATE `banners` SET `soft_delete` = :soft_delete WHERE `banners`.`id` = :id";
     
     $stmt = $conn->prepare($query);
     
     $stmt -> bindParam(':id', $_id);
+    $stmt -> bindParam(':soft_delete', $_soft_delete);
     
     $result = $stmt -> execute();
     

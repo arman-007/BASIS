@@ -28,7 +28,7 @@
         $_is_active = 0;
     }
     // $_picture = $_FILES['picture']['name'];
-
+    $_created_at = date("Y-m-d h-i-s",time());
     // connection to DB
     $servername = "localhost";
     $username = "root";
@@ -38,7 +38,7 @@
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $query = "INSERT INTO `products` (`title`, `description`, `is_active`, `picture`) VALUES (:title, :description, :is_active, :picture)";
+    $query = "INSERT INTO `products` (`title`, `description`, `is_active`, `picture`, `created_at`) VALUES (:title, :description, :is_active, :picture, :created_at)";
 
     $stmt = $conn->prepare($query);
 
@@ -46,6 +46,7 @@
     $stmt -> bindParam(':description', $_description);
     $stmt -> bindParam(':is_active', $_is_active);
     $stmt -> bindParam(':picture', $_picture);
+    $stmt -> bindParam(':created_at', $_created_at);
 
     $result = $stmt -> execute();
 

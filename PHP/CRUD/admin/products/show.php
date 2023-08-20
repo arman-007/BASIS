@@ -55,6 +55,15 @@
 
                         <dt class="col-sm-3">Description :</dt>
                         <dd class="col-sm-9"><?= $product['description'] ?></dd>
+                        
+                        <dt class="col-sm-3">Created at :</dt>
+                        <dd class="col-sm-9"><?= $product['created_at'] ?></dd>
+
+                        <dt class="col-sm-3">Modified at :</dt>
+                        <dd class="col-sm-9"><?= $product['modified_at'] ?></dd>
+
+                        <dt class="col-sm-3">Is active :</dt>
+                        <dd class="col-sm-9"><?= $product['is_active'] ? 'Active' : 'Inactive'; ?></dd>
 
                         <dt class="col-sm-3">Picture :</dt>
                         <dd class="col-sm-9">
