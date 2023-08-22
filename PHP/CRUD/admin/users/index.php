@@ -34,8 +34,7 @@ $users = $stmt->fetchAll();
     <section>
         <div class="container">
             <div class="row d-flex justify-content-center">
-                <div class="col-sm-10
-                ">
+                <div class="col-sm-6">
                     <h1 class="text-center fs-3 fw-bolder mt-3 mb-4">Users List</h1>
                     <ul class="nav d-flex justify-content-center mb-4 fw-bold">
                         <li class="nav-item"><a href="create.php" class="nav-link text-success">Add New</a></li>
@@ -45,8 +44,6 @@ $users = $stmt->fetchAll();
                             <tr>
                                 <th scope="col">Name</th>
                                 <th scope="col">User Name</th>
-                                <th scope="col">E-mail</th>
-                                <th scope="col">Phone</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
@@ -58,8 +55,6 @@ $users = $stmt->fetchAll();
                             <tr>
                                 <th scope="row"><?= $user['full_name']; ?></th>
                                 <th scope="row"><?= $user['user_name']; ?></th>
-                                <th scope="row"><?= $user['email']; ?></th>
-                                <th scope="row"><?= $user['phone_number']; ?></th>
                                 <td><a href="show.php?id=<?= $user['id']; ?>">Show</a> | <a href="edit.php?id=<?= $user['id']; ?>">edit</a> | <a href="delete.php?id=<?= $user['id']; ?>" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
                             </tr>
                             <?php

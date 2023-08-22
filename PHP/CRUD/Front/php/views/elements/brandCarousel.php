@@ -1,4 +1,5 @@
 <?php
+
 ?>
 <!-- Markup for Brand Carousel -->
 <div id="brandCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">

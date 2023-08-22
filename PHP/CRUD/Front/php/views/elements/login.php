@@ -1,12 +1,12 @@
 <?php
-
+    $webroot = "http://localhost/ARMAN/BASIS/PHP/CRUD/";
 ?>
 <main class="mt-3">
     <div class="container">
         <h1 class="fs-4 fw-bold text-secondary text-center mb-4">Log in to your account</h1>
         <div class="row d-flex justify-content-center">
             <div class="col-sm-7">
-                <form action="store.php" method="post" enctype="multipart/form-data">
+                <form action="<?=$webroot?>admin/users/login_processor.php" method="post" enctype="multipart/form-data">
                     <div class="mb-3 row">
                         <label for="inputUserName" class="col-sm-3 col-form-label">User Name:</label>
                         <div class="col-sm-9">
