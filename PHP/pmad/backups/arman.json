@@ -1,0 +1,50 @@
+[
+{"type":"header","version":"5.2.1","comment":"Export to JSON plugin for PHPMyAdmin"},
+{"type":"database","name":"arman"},
+{"type":"table","name":"banners","database":"arman","data":
+[
+{"id":"2","title":"discount","picture":null,"link":"Mark II","promotional_message":"UP TO 50% Discount","html_banner":"","is_active":"1","is_draft":null,"soft_delete":"0","max_display":null,"created_at":"2023-08-08 12:52:41","modified_at":"2023-08-08 12:52:41"},
+{"id":"3","title":"flower","picture":null,"link":"","promotional_message":"fdgfdg","html_banner":"","is_active":"1","is_draft":null,"soft_delete":"0","max_display":null,"created_at":"2023-08-08 12:56:54","modified_at":"2023-08-08 12:56:54"},
+{"id":"5","title":"f updated","picture":null,"link":"","promotional_message":"it was updated at the last moment","html_banner":"","is_active":null,"is_draft":null,"soft_delete":"0","max_display":null,"created_at":"2023-08-08 13:01:05","modified_at":"2023-08-08 13:01:05"},
+{"id":"11","title":"discount","picture":"IMG_1691898452_custom-img2.jpg","link":"","promotional_message":"","html_banner":"","is_active":null,"is_draft":null,"soft_delete":"0","max_display":null,"created_at":"2023-08-13 09:47:32","modified_at":"2023-08-13 09:47:32"},
+{"id":"12","title":"discount","picture":"IMG_1691898461_custom-img2.jpg","link":"","promotional_message":"","html_banner":"","is_active":null,"is_draft":null,"soft_delete":"0","max_display":null,"created_at":"2023-08-13 09:47:41","modified_at":"2023-08-13 09:47:41"},
+{"id":"13","title":"BMW","picture":"IMG_1692159884_blog-img2-913x500.jpg","link":"","promotional_message":"","html_banner":"","is_active":"1","is_draft":null,"soft_delete":"0","max_display":null,"created_at":"2023-08-16 10:24:44","modified_at":"2023-08-16 10:24:44"},
+{"id":"14","title":"bmw","picture":null,"link":"","promotional_message":"hh","html_banner":"","is_active":"1","is_draft":null,"soft_delete":"0","max_display":null,"created_at":"2023-08-16 10:25:11","modified_at":"2023-08-16 10:25:11"},
+{"id":"15","title":"newB","picture":"IMG_1692505420_blog.png","link":"Mark II","promotional_message":"asd","html_banner":"<HTML>","is_active":"1","is_draft":null,"soft_delete":"0","max_display":null,"created_at":"2023-08-20 10:23:40","modified_at":"2023-08-20 10:23:40"}
+]
+}
+,{"type":"table","name":"brands","database":"arman","data":
+[
+{"id":"1","title":"new Brand","link":null,"is_draft":"1","is_active":"1","soft_delete":"1","created_at":"2023-08-07 12:35:29","modified_at":"2023-08-07 12:35:29"},
+{"id":"2","title":"Brand2","link":null,"is_draft":null,"is_active":null,"soft_delete":null,"created_at":"2023-08-07 12:38:43","modified_at":"2023-08-07 12:38:43"},
+{"id":"3","title":"GUCCI","link":null,"is_draft":null,"is_active":null,"soft_delete":null,"created_at":"2023-08-07 12:43:36","modified_at":"2023-08-07 12:43:36"},
+{"id":"4","title":"SUPREME","link":null,"is_draft":null,"is_active":null,"soft_delete":null,"created_at":"2023-08-07 12:44:01","modified_at":"2023-08-07 12:44:01"}
+]
+}
+,{"type":"table","name":"categories","database":"arman","data":
+[
+{"id":"1","name":"vehicle","link":"Mark II","soft_delete":null,"is_draft":null,"created_at":"2023-08-08 10:13:45","modified_at":"2023-08-08 10:13:45"}
+]
+}
+,{"type":"table","name":"products","database":"arman","data":
+[
+{"id":"10","title":"keyboard","description":"HP desktop keyboard","is_active":"0","picture":null,"created_at":"2023-08-17 17:04:32","modified_at":null,"is_deleted":"1"},
+{"id":"11","title":"Mouse","description":"A4Tech","is_active":"0","picture":null,"created_at":"2023-08-17 17:04:32","modified_at":null,"is_deleted":"0"},
+{"id":"12","title":"Monitor","description":"HP","is_active":"0","picture":null,"created_at":"2023-08-17 17:04:32","modified_at":null,"is_deleted":"0"},
+{"id":"13","title":"Mobile","description":"Xiaomi mi11 lite","is_active":"0","picture":null,"created_at":"2023-08-17 17:04:32","modified_at":null,"is_deleted":"0"},
+{"id":"17","title":"SUPREME updated","description":"supreme product image","is_active":"0","picture":"IMG_1691897765_newsletter-img.jpg","created_at":"2023-08-17 17:04:32","modified_at":null,"is_deleted":"0"},
+{"id":"18","title":"Mechanical Keyboard","description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid magnam voluptatem reiciendis beatae minus corporis voluptate sint iste cumq","is_active":"1","picture":"IMG_1692158487_product15-700x850.jpg","created_at":"2023-08-17 17:04:32","modified_at":null,"is_deleted":"0"},
+{"id":"19","title":"carX","description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid magnam voluptatem reiciendis beatae minus corporis voluptate sint iste cumq","is_active":"0","picture":"IMG_1692159470_b-logo1-130x50.png","created_at":"2023-08-17 17:04:32","modified_at":null,"is_deleted":"0"}
+]
+}
+,{"type":"table","name":"users","database":"arman","data":
+[
+{"id":"1","full_name":"sanjida afrin","user_name":"suuup","email":"sanjida@gmail.com","password":"66ss","phone_number":"0479387485","soft_delete":null,"is_draft":null,"is_active":null,"created_at":"2023-08-13 10:08:55","modified_at":"2023-08-13 10:08:55"},
+{"id":"2","full_name":"pr0","user_name":"pr_0","email":"sanjida@gmail.com","password":"hgfhgf","phone_number":"0479387485","soft_delete":null,"is_draft":null,"is_active":null,"created_at":"2023-08-13 10:39:02","modified_at":"2023-08-13 10:39:02"},
+{"id":"3","full_name":"Andrew Tate","user_name":"What_color_is_your_buggati","email":"the_bald_guy@gmail.com","password":"ewe","phone_number":"0479387485","soft_delete":null,"is_draft":null,"is_active":null,"created_at":"2023-08-13 10:41:33","modified_at":"2023-08-13 10:41:33"},
+{"id":"4","full_name":"fgfgf","user_name":"suuup","email":"sfsdf@df.com","password":"asd","phone_number":"dsfdsf","soft_delete":null,"is_draft":null,"is_active":null,"created_at":"2023-08-20 19:27:53","modified_at":"2023-08-20 19:27:53"},
+{"id":"5","full_name":"sfdsdf","user_name":"suuup","email":"sdfdsf@gmail.com","password":"cvfg","phone_number":"0479387485","soft_delete":null,"is_draft":null,"is_active":null,"created_at":"2023-08-22 09:33:54","modified_at":"2023-08-22 09:33:54"},
+{"id":"6","full_name":"sfdsdf","user_name":"arr","email":"sdfdsf@gmail.com","password":"arr","phone_number":"0479387485","soft_delete":null,"is_draft":null,"is_active":null,"created_at":"2023-08-22 10:38:15","modified_at":"2023-08-22 10:38:15"}
+]
+}
+]

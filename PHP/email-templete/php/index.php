@@ -1,8 +1,19 @@
 <?php
-$title = "Email Template";
-$address = "John";
-$button = "Call to Action";
-$greetings = "Good luck! Hope it works.";
+include_once("vendor/autoload.php");
+
+use email\email\Email;
+
+$user = new Email();
+
+$user ->title = "Email Template";
+$user ->address = "John";
+$user ->button = "Call to Action";
+$user ->greetings = "Good luck! Hope it works.";
+
+$title = $user -> title;
+$address = $user ->address;
+$button= $user->button;
+$greetings = $user->greetings;
 
 
 $head = <<<EMAILTEMP1
