@@ -1,29 +1,12 @@
 <pre>
     <?php
-    $webroot = "http://localhost/ARMAN/BASIS/PHP/CRUD/";
-    $_id = $_GET['id'];
+        include_once($_SERVER['DOCUMENT_ROOT']."/ARMAN/BASIS/PHP/CRUD/config.php");
+            
+        use Ecom\Products;
 
-    // var_dump($_GET);
+        $_product = new Products();
 
-    // connection to DB
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "ARMAN";
-
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    // set the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    $query = "SELECT * FROM `products` WHERE id= (:id)";
-
-    $stmt = $conn->prepare($query);
-
-    $stmt->bindParam(':id', $_id);
-
-    $result = $stmt->execute();
-
-    $product = $stmt->fetch();
+        $product = $_product ->show();
     ?>
 </pre>
 

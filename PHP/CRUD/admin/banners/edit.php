@@ -1,28 +1,12 @@
 <pre>
     <?php
-    $_id = $_GET['id'];
+        include_once($_SERVER['DOCUMENT_ROOT']."/ARMAN/BASIS/PHP/CRUD/config.php");
+
+        use Ecom\banners;
     
-    // var_dump($_GET);
+        $_banner = new Banners();
     
-    // connection to DB
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "ARMAN";
-    
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    // set the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
-    $query = "SELECT * FROM `banners` WHERE id= (:id)";
-    
-    $stmt = $conn->prepare($query);
-    
-    $stmt -> bindParam(':id', $_id);
-    
-    $result = $stmt -> execute();
-    
-    $banner = $stmt-> fetch();
+        $banner = $_banner ->edit();
     ?>
 </pre>
 
@@ -78,6 +62,14 @@
                                 <?php
                                 }
                                 ?>
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="inputPicture" class="col-sm-3 col-form-label">Picture:</label>
+                            <div class="col-sm-9">
+                                <input type="file" class="form-control" id="inputPicture" name="picture" value="<?= $banner['picture']; ?>">
+                                <img class="img-fluid mt-3" src="<?=$webroot?>uploads/<?= $banner['picture'];?>" alt="banner image">
+                                <input type="hidden" name="old_picture" value="<?= $banner['picture'];?>">
                             </div>
                         </div>
                         <button type="submit" class="btn btn-secondary">Submit</button>

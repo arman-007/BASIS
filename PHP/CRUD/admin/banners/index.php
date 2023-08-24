@@ -1,22 +1,12 @@
 <pre>
 <?php
-// connection to DB
-$servername = "localhost";
-$username = "root";
-$password = "";
+    include_once($_SERVER['DOCUMENT_ROOT']."/ARMAN/BASIS/PHP/CRUD/config.php");
 
-$conn = new PDO("mysql:host=$servername;dbname=ARMAN", $username, $password);
-// set the PDO error mode to exception
-$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    use Ecom\banners;
 
-$query = "SELECT * FROM `banners` WHERE `banners`.`soft_delete` = 0";
+    $_banner = new Banners();
 
-$stmt = $conn->prepare($query);
-
-$result = $stmt->execute();
-$banners = $stmt->fetchAll();
-
-// var_dump($products);
+    $banners = $_banner ->index();
 ?>
 </pre>
 
@@ -55,7 +45,7 @@ $banners = $stmt->fetchAll();
                             <tr>
                                 <td scope="row"><?= $banner['title']; ?></td>
                                 <td class="text-center" scope="row"><?= $banner['is_active'] ? 'Active' : 'Inactive'; ?></td>
-                                <td class="text-center"><a href="show.php?id=<?= $banner['id']; ?>">Show</a> | <a href="edit.php?id=<?= $banner['id']; ?>">Edit</a> | <a href="trash.php?id=<?= $banner['id']; ?>">Trash</a> | <a href="delete.php?id=<?= $banner['id']; ?>" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
+                                <td class="text-center"><a href="show.php?id=<?= $banner['id']; ?>">Show</a> | <a href="edit.php?id=<?= $banner['id']; ?>">Edit</a> | <a href="trash.php?id=<?= $banner['id']; ?>">Trash</a></td>
                             </tr>
                         </tbody>
                         <?php

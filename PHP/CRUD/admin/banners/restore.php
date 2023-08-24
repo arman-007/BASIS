@@ -1,30 +1,11 @@
 <pre>
     <?php
-    $_id = $_GET['id'];
+        include_once($_SERVER['DOCUMENT_ROOT']."/ARMAN/BASIS/PHP/CRUD/config.php");
 
-    $_soft_delete = 0;
-
-    // connection to DB
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "ARMAN";
+        use Ecom\banners;
     
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    // set the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $_banner = new Banners();
     
-    $query = "UPDATE `banners` SET `soft_delete` = :soft_delete WHERE `banners`.`id` = :id";
-    
-    $stmt = $conn->prepare($query);
-    
-    $stmt -> bindParam(':id', $_id);
-    $stmt -> bindParam(':soft_delete', $_soft_delete);
-    
-    $result = $stmt -> execute();
-    
-    // $product = $stmt-> fetch();
-    header("location: trash_index.php");
-
+        $_banner ->restore();
     ?>
 </pre>

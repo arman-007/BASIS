@@ -1,22 +1,12 @@
 <pre>
 <?php
-// connection to DB
-$servername = "localhost";
-$username = "root";
-$password = "";
+        include_once($_SERVER['DOCUMENT_ROOT']."/ARMAN/BASIS/PHP/CRUD/config.php");
 
-$conn = new PDO("mysql:host=$servername;dbname=ARMAN", $username, $password);
-// set the PDO error mode to exception
-$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-$query = "SELECT * FROM `banners` WHERE `banners`.`soft_delete` = 1";
-
-$stmt = $conn->prepare($query);
-
-$result = $stmt->execute();
-$banners = $stmt->fetchAll();
-
-// var_dump($products);
+        use Ecom\banners;
+    
+        $_banner = new Banners();
+    
+        $banners = $_banner ->trashIndex();
 ?>
 </pre>
 

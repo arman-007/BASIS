@@ -1,20 +1,13 @@
 <pre>
 <?php
 // connection to DB
-$servername = "localhost";
-$username = "root";
-$password = "";
+    include_once($_SERVER['DOCUMENT_ROOT']."/ARMAN/BASIS/PHP/CRUD/config.php");
+            
+    use Ecom\Products;
 
-$conn = new PDO("mysql:host=$servername;dbname=ARMAN", $username, $password);
-// set the PDO error mode to exception
-$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $_product = new Products();
 
-$query = "SELECT * FROM `products` WHERE `products`.`is_deleted` = 1";
-
-$stmt = $conn->prepare($query);
-
-$result = $stmt->execute();
-$products = $stmt->fetchAll();
+    $products = $_product ->trashIndex();
 
 // var_dump($products);
 ?>
@@ -48,16 +41,16 @@ $products = $stmt->fetchAll();
                         </thead>
                         <tbody>
                             <?php
-                            if(count($products) > 0):
-                                foreach($products as $product):
+                                if(count($products) > 0):
+                                    foreach($products as $product):
                             ?>
                             <tr>
                                 <td scope="row"><?= $product['title']; ?></td>
                                 <td><a href="restore.php?id=<?= $product['id']; ?>">Restore</a> | <a href="delete.php?id=<?= $product['id']; ?>" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
                             </tr>
                             <?php
-                                endforeach;
-                            else:
+                                    endforeach;
+                                else:
                             ?>
                             <tr>
                                 <td colspan="2" class="text-center" >
@@ -66,7 +59,7 @@ $products = $stmt->fetchAll();
                                 </td>
                             </tr>
                             <?php
-                            endif;
+                                endif;
                             ?>
                         </tbody>
                     </table>

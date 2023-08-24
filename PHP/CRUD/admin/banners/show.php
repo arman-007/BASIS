@@ -1,28 +1,12 @@
 <pre>
     <?php
-    $_id = $_GET['id'];
+        include_once($_SERVER['DOCUMENT_ROOT']."/ARMAN/BASIS/PHP/CRUD/config.php");
+
+        use Ecom\banners;
     
-    // var_dump($_GET);
+        $_banner = new Banners();
     
-    // connection to DB
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "ARMAN";
-    
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    // set the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
-    $query = "SELECT * FROM `banners` WHERE id= (:id)";
-    
-    $stmt = $conn->prepare($query);
-    
-    $stmt -> bindParam(':id', $_id);
-    
-    $result = $stmt -> execute();
-    
-    $banner = $stmt-> fetch();
+        $banner = $_banner ->show();
     ?>
 </pre>
 
@@ -60,6 +44,11 @@
 
                         <dt class="col-sm-3">Is active :</dt>
                         <dd class="col-sm-9"><?= $banner['is_active'] ? 'Active' : 'Inactive'; ?></dd>
+                        
+                        <dt class="col-sm-3">Picture :</dt>
+                        <dd class="col-sm-9">
+                            <img class="img-fluid" src="<?= $webroot ?>uploads/<?= $banner['picture']; ?>" alt="product image">
+                        </dd>
                     </dl>
                 </div>
             </div>

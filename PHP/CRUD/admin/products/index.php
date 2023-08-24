@@ -1,28 +1,13 @@
 <pre>
 <?php
+    // include_once($_SERVER['DOCUMENT_ROOT']."/ARMAN/BASIS/PHP/CRUD/authenticator.php");
+    include_once($_SERVER['DOCUMENT_ROOT']."/ARMAN/BASIS/PHP/CRUD/config.php");
+            
+    use Ecom\Products;
 
-// echo $_SERVER['DOCUMENT_ROOT'];
-// die();
+    $_product = new Products();
 
-include_once($_SERVER['DOCUMENT_ROOT']."/ARMAN/BASIS/PHP/CRUD/authenticator.php");
-
-// connection to DB
-$servername = "localhost";
-$username = "root";
-$password = "";
-
-$conn = new PDO("mysql:host=$servername;dbname=ARMAN", $username, $password);
-// set the PDO error mode to exception
-$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-$query = "SELECT * FROM `products` WHERE `products`.`is_deleted` = 0";
-
-$stmt = $conn->prepare($query);
-
-$result = $stmt->execute();
-$products = $stmt->fetchAll();
-
-// var_dump($products);
+    $products = $_product ->index();
 ?>
 </pre>
 
@@ -85,5 +70,4 @@ $products = $stmt->fetchAll();
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
-
 </html>
