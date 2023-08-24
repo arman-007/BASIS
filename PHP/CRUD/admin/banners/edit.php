@@ -44,7 +44,7 @@
                         <div class="mb-3 row">
                             <label for="inputPromotionalMessage" class="col-sm-3 col-form-label">Promotional Message:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="inputPromotionalMessage" name="promotionalMessage" value="<?= $banner['promotional_message']; ?>" required>
+                                <input type="text" class="form-control" id="inputPromotionalMessage" name="promotionalMessage" value="<?= $banner['promotional_message']; ?>">
                             </div>
                         </div>
                         <div class="mb-3 row">

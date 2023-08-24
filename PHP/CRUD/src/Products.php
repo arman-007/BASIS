@@ -6,7 +6,18 @@ use PDO;
 class Products{
     public $id = null;
     public $title = null;
+    public $conn = null;
 
+    public function __construct(){
+        // connection to DB
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+
+        $this->conn = new PDO("mysql:host=$servername;dbname=ARMAN", $username, $password);
+        // set the PDO error mode to exception
+        $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    }
     public function store(){
         $approot = $_SERVER['DOCUMENT_ROOT']."/ARMAN/BASIS/PHP/CRUD/uploads/";
         //working with image
@@ -36,18 +47,10 @@ class Products{
         }
         // $_picture = $_FILES['picture']['name'];
         $_created_at = date("Y-m-d h-i-s",time());
-        // connection to DB
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-
-        $conn = new PDO("mysql:host=$servername;dbname=ARMAN", $username, $password);
-        // set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         $query = "INSERT INTO `products` (`title`, `description`, `is_active`, `picture`, `created_at`) VALUES (:title, :description, :is_active, :picture, :created_at)";
 
-        $stmt = $conn->prepare($query);
+        $stmt = $this->conn->prepare($query);
 
         $stmt -> bindParam(':title', $_title);
         $stmt -> bindParam(':description', $_description);
@@ -57,25 +60,29 @@ class Products{
 
         $result = $stmt -> execute();
 
-        // var_dump($result);
-
         header("location: index.php");
-        }
+    }
 
     public function index(){
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-
-        $conn = new PDO("mysql:host=$servername;dbname=ARMAN", $username, $password);
-        // set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
         $query = "SELECT * FROM `products` WHERE `products`.`is_deleted` = 0";
 
-        $stmt = $conn->prepare($query);
+        $stmt = $this->conn->prepare($query);
 
         $result = $stmt->execute();
+        $products = $stmt->fetchAll();
+
+        return $products;
+    }
+    
+    public function getActiveBestSellersProducts(){
+        $_startFrom = 0;
+        $_total = 5;
+
+        $query = "SELECT * FROM `products` WHERE `products`.`is_active` = 1 LIMIT $_startFrom, $_total";
+
+        $stmt = $this->conn->prepare($query);
+
+        $stmt->execute();
         $products = $stmt->fetchAll();
 
         return $products;
@@ -84,21 +91,9 @@ class Products{
     public function show(){
         $_id = $_GET['id'];
     
-        // var_dump($_GET);
-    
-        // connection to DB
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "ARMAN";
-    
-        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-        // set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
         $query = "SELECT * FROM `products` WHERE id= (:id)";
     
-        $stmt = $conn->prepare($query);
+        $stmt = $this->conn->prepare($query);
     
         $stmt->bindParam(':id', $_id);
     
@@ -112,19 +107,9 @@ class Products{
     public function edit(){
         $_id = $_GET['id'];
         
-        // connection to DB
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "ARMAN";
-        
-        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-        // set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        
         $query = "SELECT * FROM `products` WHERE id= (:id)";
         
-        $stmt = $conn->prepare($query);
+        $stmt = $this->conn->prepare($query);
         
         $stmt -> bindParam(':id', $_id);
         
@@ -169,18 +154,9 @@ class Products{
         }
         $_modified_at = date("Y-m-d h-i-s",time());
     
-        // connection to DB
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-    
-        $conn = new PDO("mysql:host=$servername;dbname=ARMAN", $username, $password);
-        // set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
         $query = "UPDATE `products` SET `title` = :title, `description` = :description, `is_active` = :is_active, `picture` = :picture, `modified_at` = :modified_at WHERE `products`.`id` = :id";
     
-        $stmt = $conn->prepare($query);
+        $stmt = $this->conn->prepare($query);
     
         $stmt -> bindParam(':id', $_id);
         $stmt -> bindParam(':title', $_title);
@@ -200,20 +176,10 @@ class Products{
         $_id = $_GET['id'];
 
         $_is_deleted = 1;
-
-        // connection to DB
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "ARMAN";
-        
-        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-        // set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
         $query = "UPDATE `products` SET `is_deleted` = :is_deleted WHERE `products`.`id` = :id";
         
-        $stmt = $conn->prepare($query);
+        $stmt = $this->conn->prepare($query);
         
         $stmt -> bindParam(':id', $_id);
         $stmt -> bindParam(':is_deleted', $_is_deleted);
@@ -225,17 +191,9 @@ class Products{
     }
 
     public function trashIndex(){
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-
-        $conn = new PDO("mysql:host=$servername;dbname=ARMAN", $username, $password);
-        // set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
         $query = "SELECT * FROM `products` WHERE `products`.`is_deleted` = 1";
 
-        $stmt = $conn->prepare($query);
+        $stmt = $this->conn->prepare($query);
 
         $stmt->execute();
         $products = $stmt->fetchAll();
@@ -245,20 +203,10 @@ class Products{
 
     public function delete(){
         $_id = $_GET['id'];
-
-        // connection to DB
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "ARMAN";
-        
-        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-        // set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
         $query = "DELETE FROM products WHERE `products`.`id` = :id";
         
-        $stmt = $conn->prepare($query);
+        $stmt = $this->conn->prepare($query);
         
         $stmt -> bindParam(':id', $_id);
         
@@ -272,20 +220,10 @@ class Products{
         $_id = $_GET['id'];
 
         $_is_deleted = 0;
-
-        // connection to DB
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "ARMAN";
-        
-        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-        // set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
         $query = "UPDATE `products` SET `is_deleted` = :is_deleted WHERE `products`.`id` = :id";
         
-        $stmt = $conn->prepare($query);
+        $stmt = $this->conn->prepare($query);
         
         $stmt -> bindParam(':id', $_id);
         $stmt -> bindParam(':is_deleted', $_is_deleted);

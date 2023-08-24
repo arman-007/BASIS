@@ -8,9 +8,9 @@
 {"id":"5","title":"f updated","picture":null,"link":"","promotional_message":"it was updated at the last moment","html_banner":"","is_active":null,"is_draft":null,"soft_delete":"0","max_display":null,"created_at":"2023-08-08 13:01:05","modified_at":"2023-08-08 13:01:05"},
 {"id":"11","title":"discount","picture":"IMG_1691898452_custom-img2.jpg","link":"","promotional_message":"","html_banner":"","is_active":null,"is_draft":null,"soft_delete":"0","max_display":null,"created_at":"2023-08-13 09:47:32","modified_at":"2023-08-13 09:47:32"},
 {"id":"12","title":"discount","picture":"IMG_1691898461_custom-img2.jpg","link":"","promotional_message":"","html_banner":"","is_active":null,"is_draft":null,"soft_delete":"0","max_display":null,"created_at":"2023-08-13 09:47:41","modified_at":"2023-08-13 09:47:41"},
-{"id":"13","title":"BMW","picture":"IMG_1692159884_blog-img2-913x500.jpg","link":"","promotional_message":"","html_banner":"","is_active":"1","is_draft":null,"soft_delete":"0","max_display":null,"created_at":"2023-08-16 10:24:44","modified_at":"2023-08-16 10:24:44"},
-{"id":"14","title":"bmw","picture":null,"link":"","promotional_message":"hh","html_banner":"","is_active":"1","is_draft":null,"soft_delete":"0","max_display":null,"created_at":"2023-08-16 10:25:11","modified_at":"2023-08-16 10:25:11"},
-{"id":"15","title":"newB","picture":"IMG_1692505420_blog.png","link":"Mark II","promotional_message":"asd","html_banner":"<HTML>","is_active":"1","is_draft":null,"soft_delete":"0","max_display":null,"created_at":"2023-08-20 10:23:40","modified_at":"2023-08-20 10:23:40"}
+{"id":"13","title":"BMW edit","picture":"IMG_1692159884_blog-img2-913x500.jpg","link":"","promotional_message":"asdsad","html_banner":"","is_active":"1","is_draft":null,"soft_delete":"0","max_display":null,"created_at":"2023-08-16 10:24:44","modified_at":"2023-08-16 10:24:44"},
+{"id":"15","title":"newB updated","picture":"IMG_1692505420_blog.png","link":"Mark II","promotional_message":"asd","html_banner":"<HTML>","is_active":"1","is_draft":null,"soft_delete":"0","max_display":null,"created_at":"2023-08-20 10:23:40","modified_at":"2023-08-20 10:23:40"},
+{"id":"16","title":"carX updated","picture":"IMG_1692858794_custom-img4.jpg","link":"DSF","promotional_message":"SDFSDF","html_banner":"SDF","is_active":"1","is_draft":null,"soft_delete":"0","max_display":null,"created_at":"2023-08-24 12:33:14","modified_at":"2023-08-24 12:33:14"}
 ]
 }
 ,{"type":"table","name":"brands","database":"arman","data":
@@ -28,13 +28,13 @@
 }
 ,{"type":"table","name":"products","database":"arman","data":
 [
-{"id":"10","title":"keyboard","description":"HP desktop keyboard","is_active":"0","picture":null,"created_at":"2023-08-17 17:04:32","modified_at":null,"is_deleted":"1"},
-{"id":"11","title":"Mouse","description":"A4Tech","is_active":"0","picture":null,"created_at":"2023-08-17 17:04:32","modified_at":null,"is_deleted":"0"},
+{"id":"11","title":"Mouse edited using object","description":"A4Tech","is_active":"1","picture":"IMG_1692851957_blog.png","created_at":"2023-08-17 17:04:32","modified_at":"2023-08-24 10:39:17","is_deleted":"0"},
 {"id":"12","title":"Monitor","description":"HP","is_active":"0","picture":null,"created_at":"2023-08-17 17:04:32","modified_at":null,"is_deleted":"0"},
 {"id":"13","title":"Mobile","description":"Xiaomi mi11 lite","is_active":"0","picture":null,"created_at":"2023-08-17 17:04:32","modified_at":null,"is_deleted":"0"},
 {"id":"17","title":"SUPREME updated","description":"supreme product image","is_active":"0","picture":"IMG_1691897765_newsletter-img.jpg","created_at":"2023-08-17 17:04:32","modified_at":null,"is_deleted":"0"},
 {"id":"18","title":"Mechanical Keyboard","description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid magnam voluptatem reiciendis beatae minus corporis voluptate sint iste cumq","is_active":"1","picture":"IMG_1692158487_product15-700x850.jpg","created_at":"2023-08-17 17:04:32","modified_at":null,"is_deleted":"0"},
-{"id":"19","title":"carX","description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid magnam voluptatem reiciendis beatae minus corporis voluptate sint iste cumq","is_active":"0","picture":"IMG_1692159470_b-logo1-130x50.png","created_at":"2023-08-17 17:04:32","modified_at":null,"is_deleted":"0"}
+{"id":"19","title":"carX updated","description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid magnam voluptatem reiciendis beatae minus corporis voluptate sint iste cumq","is_active":"1","picture":"IMG_1692852453_product1-700x850.jpg","created_at":"2023-08-17 17:04:32","modified_at":"2023-08-24 10:47:33","is_deleted":"0"},
+{"id":"22","title":"product title using class","description":"hp","is_active":"1","picture":"IMG_1692849458_b-logo3-130x50.png","created_at":"2023-08-24 09:57:38","modified_at":null,"is_deleted":"0"}
 ]
 }
 ,{"type":"table","name":"users","database":"arman","data":

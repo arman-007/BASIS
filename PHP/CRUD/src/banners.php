@@ -4,19 +4,37 @@ namespace Ecom;
 use PDO;
 
 class Banners{
-    public function index(){
+    public $conn = null;
+
+    public function __construct(){
         // connection to DB
         $servername = "localhost";
         $username = "root";
         $password = "";
 
-        $conn = new PDO("mysql:host=$servername;dbname=ARMAN", $username, $password);
+        $this->conn = new PDO("mysql:host=$servername;dbname=ARMAN", $username, $password);
         // set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    }
 
+    public function getActiveBanners(){
+        $_startFrom = 0;
+        $_total = 8;
+        $query = "SELECT * FROM `banners` WHERE `banners`.`is_active` = 1 LIMIT $_startFrom, $_total";
+
+        $stmt = $this->conn->prepare($query);
+
+        $stmt->execute();
+        $banners = $stmt->fetchAll();
+
+        return $banners;
+
+        // var_dump($products);
+    }
+    public function index(){
         $query = "SELECT * FROM `banners` WHERE `banners`.`soft_delete` = 0";
 
-        $stmt = $conn->prepare($query);
+        $stmt = $this->conn->prepare($query);
 
         $stmt->execute();
         $banners = $stmt->fetchAll();
@@ -59,19 +77,9 @@ class Banners{
             $_is_active = 0;
         }
 
-        // connection to DB
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "ARMAN";
-
-        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-        // set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
         $query = "INSERT INTO `banners` (`title`, `picture`, `link`,`promotional_message`,`html_banner`, `is_active`) VALUES (:title, :picture, :link, :promotionalMessage, :bannerHTML,:is_active)";
 
-        $stmt = $conn->prepare($query);
+        $stmt = $this->conn->prepare($query);
 
         $stmt -> bindParam(':title', $_title);
         $stmt -> bindParam(':picture', $_picture);
@@ -92,19 +100,9 @@ class Banners{
     
         // var_dump($_GET);
         
-        // connection to DB
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "ARMAN";
-        
-        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-        // set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        
         $query = "SELECT * FROM `banners` WHERE id= (:id)";
         
-        $stmt = $conn->prepare($query);
+        $stmt = $this->conn->prepare($query);
         
         $stmt -> bindParam(':id', $_id);
         
@@ -117,22 +115,10 @@ class Banners{
 
     public function edit(){
         $_id = $_GET['id'];
-    
-        // var_dump($_GET);
-        
-        // connection to DB
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "ARMAN";
-        
-        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-        // set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
         $query = "SELECT * FROM `banners` WHERE id= (:id)";
         
-        $stmt = $conn->prepare($query);
+        $stmt = $this->conn->prepare($query);
         
         $stmt -> bindParam(':id', $_id);
         
@@ -155,18 +141,9 @@ class Banners{
         }
         $_modified_at = date("Y-m-d h-i-s",time());
 
-        // connection to DB
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-
-        $conn = new PDO("mysql:host=$servername;dbname=ARMAN", $username, $password);
-        // set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
         $query = "UPDATE `banners` SET `title` = :title, `promotional_message` = :promotional_message, `is_active` = :is_active WHERE `banners`.`id` = :id";
 
-        $stmt = $conn->prepare($query);
+        $stmt = $this->conn->prepare($query);
 
         $stmt -> bindParam(':id', $_id);
         $stmt -> bindParam(':title', $_title);
@@ -184,20 +161,10 @@ class Banners{
         $_id = $_GET['id'];
 
         $_soft_delete = 1;
-
-        // connection to DB
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "ARMAN";
-        
-        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-        // set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
         $query = "UPDATE `banners` SET `soft_delete` = :soft_delete WHERE `banners`.`id` = :id";
         
-        $stmt = $conn->prepare($query);
+        $stmt = $this->conn->prepare($query);
         
         $stmt -> bindParam(':id', $_id);
         $stmt -> bindParam(':soft_delete', $_soft_delete);
@@ -209,18 +176,9 @@ class Banners{
     }
 
     public function trashIndex(){
-        // connection to DB
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-
-        $conn = new PDO("mysql:host=$servername;dbname=ARMAN", $username, $password);
-        // set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
         $query = "SELECT * FROM `banners` WHERE `banners`.`soft_delete` = 1";
 
-        $stmt = $conn->prepare($query);
+        $stmt = $this->conn->prepare($query);
 
         $result = $stmt->execute();
         $banners = $stmt->fetchAll();
@@ -233,20 +191,10 @@ class Banners{
         $_id = $_GET['id'];
 
         $_soft_delete = 0;
-
-        // connection to DB
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "ARMAN";
-        
-        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-        // set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
         $query = "UPDATE `banners` SET `soft_delete` = :soft_delete WHERE `banners`.`id` = :id";
         
-        $stmt = $conn->prepare($query);
+        $stmt = $this->conn->prepare($query);
         
         $stmt -> bindParam(':id', $_id);
         $stmt -> bindParam(':soft_delete', $_soft_delete);
@@ -259,20 +207,10 @@ class Banners{
 
     public function delete(){
         $_id = $_GET['id'];
-
-        // connection to DB
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "ARMAN";
-        
-        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-        // set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
         $query = "DELETE FROM banners WHERE `banners`.`id` = :id";
         
-        $stmt = $conn->prepare($query);
+        $stmt = $this->conn->prepare($query);
         
         $stmt -> bindParam(':id', $_id);
         
