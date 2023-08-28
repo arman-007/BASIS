@@ -130,6 +130,8 @@ class Banners{
     }
 
     public function update(){
+        $approot = $_SERVER['DOCUMENT_ROOT']."/ARMAN/BASIS/PHP/CRUD/uploads/";
+
         $_id = $_POST['id'];
         $_title = $_POST['title'];
         $_promotionalMessage = $_POST['promotionalMessage'];
@@ -140,8 +142,28 @@ class Banners{
             $_is_active = 0;
         }
         $_modified_at = date("Y-m-d h-i-s",time());
+        //working with image
+        if($_FILES['picture']['name'] != ""){
+            $file_name = "IMG_".time()."_".$_FILES['picture']['name'];
+    
+            $target = $_FILES['picture']['tmp_name'];
+                
+            $destination = $approot.$file_name;
+    
+            $is_file_moved = move_uploaded_file($target, $destination);
+    
+            if($is_file_moved){
+                $_picture =  $file_name;
+            }
+            else{
+                $_picture = null;
+            }
+        }
+        else{
+            $_picture = $_POST['old_picture'];
+        }
 
-        $query = "UPDATE `banners` SET `title` = :title, `promotional_message` = :promotional_message, `is_active` = :is_active WHERE `banners`.`id` = :id";
+        $query = "UPDATE `banners` SET `title` = :title, `promotional_message` = :promotional_message, `is_active` = :is_active, `modified_at` = :modified_at, `picture` = :picture WHERE `banners`.`id` = :id";
 
         $stmt = $this->conn->prepare($query);
 
@@ -149,8 +171,10 @@ class Banners{
         $stmt -> bindParam(':title', $_title);
         $stmt -> bindParam(':promotional_message', $_promotionalMessage);
         $stmt -> bindParam(':is_active', $_is_active);
+        $stmt -> bindParam(':modified_at', $_modified_at);
+        $stmt -> bindParam(':picture', $_picture);
 
-        $result = $stmt -> execute();
+        $stmt -> execute();
 
         // var_dump($result);
 
