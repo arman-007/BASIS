@@ -1,0 +1,18 @@
+[
+{"type":"header","version":"5.2.1","comment":"Export to JSON plugin for PHPMyAdmin"},
+{"type":"database","name":"md_arman_hosen"},
+{"type":"table","name":"sliders","database":"md_arman_hosen","data":
+[
+{"id":"1","title":"carX updated1","picture":"IMG_1693198662_custom-img2.jpg","is_active":"0","created_at":"2023-08-28 10:46:30","modified_at":"2023-08-28 10:57:42"},
+{"id":"2","title":"Juta","picture":"IMG_1693198947_newsletter-img.jpg","is_active":"0","created_at":"2023-08-28 11:02:27","modified_at":"2023-08-28 12:11:37"},
+{"id":"3","title":"b1","picture":"IMG_1693206064_retro-futurism-vector-futuristic-synth-wave-illustration-s-retro-poster-background-night-city-skyline-rave-party-flyer-design-157466232.webp","is_active":"1","created_at":"2023-08-28 12:11:52","modified_at":"2023-08-28 01:01:04"},
+{"id":"4","title":"b2","picture":"IMG_1693203122_KQHZh2.webp","is_active":"1","created_at":"2023-08-28 12:12:02","modified_at":"2023-08-28 12:12:02"},
+{"id":"5","title":"b3","picture":"IMG_1693203131_sunset-2177324_1920-001.jpg","is_active":"1","created_at":"2023-08-28 12:12:11","modified_at":"2023-08-28 12:12:11"}
+]
+}
+,{"type":"table","name":"users","database":"md_arman_hosen","data":
+[
+{"id":"1","name":"arr","username":"arr","mobile":"01234567890","email":"ararar@ffd.co","password":"arr"}
+]
+}
+]
